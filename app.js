@@ -1,6 +1,10 @@
+const page = document.createElement('div');
+page.className = 'page';
+document.body.appendChild(page);
+
 const top = document.createElement('div');
 top.className = 'top';
-document.body.appendChild(top);
+page.appendChild(top);
 
 const titleArea = document.createElement('div');
 titleArea.className = 'titleArea';
@@ -12,8 +16,6 @@ titleArea.appendChild(title);
 const subtitle = document.createElement('div');
 subtitle.className = 'subtitle';
 titleArea.appendChild(subtitle);
-
-document.body.appendChild(top);
 
 const contact = document.createElement('div');
 contact.className = 'contact';
@@ -34,18 +36,40 @@ for(const line of contactLines) {
 
 const content = document.createElement('div');
 content.className = 'content';
-document.body.appendChild(content);
+page.appendChild(content);
 
-const header1 = document.createElement('div');
-header1.className = 'header';
-header1.appendChild(document.createTextNode('SUMMARY / PROFILE'));
-content.appendChild(header1);
+const addHeader = (text)=>{
+	const header = document.createElement('div');
+	header.className = 'header';
+	header.appendChild(document.createTextNode(text));
+	content.appendChild(header);	
+}
+const addParagraph = (text)=>{
+	const paragraph = document.createElement('div');
+	paragraph.className = 'paragraph';
+	paragraph.appendChild(document.createTextNode(text));
+	content.appendChild(paragraph);	
+}
+
+addHeader('SUMMARY / PROFILE');
+addParagraph('I am looking to advance my career as an OpenGL/WebGL developer, a lead software developer and designer.');
+addParagraph('Experienced lead developer. DEEP Inc.: Apple, iOS, tvOS; web: WebGL. 3D graphics, OpenGL, GLSL.');
+
+addHeader('SKILLS');
+
+addHeader('Magic of Flight');
+addParagraph('https://liquidcinemavr.com/fly/');
+
+addHeader('OMAF');
+addParagraph('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html');
+addParagraph('MPEG OMAF Format Integration at Liquid Cinema');
+addParagraph('Oct 2019 - Dec 2019Oct 2019 - Dec 2019');
+addParagraph('• OMAF is a new streaming format that reduces the bandwidth needed to stream 360 media. Developed by Fraunhofer HHI');
+addParagraph('• Worked closely with a team to integrate the OMAF dash streaming format into the Liquid Cinema android app');
+addParagraph('• Designed a custom dash download manager to accommodate the new format');
+addParagraph('• Integrated a C++ library into the Kotlin and Java code of the app');
 
 const resume = `
-
-I am looking to advance my career as an OpenGL/WebGL developer, a lead software developer and designer. 
-Experienced lead developer. DEEP Inc.: Apple, iOS, tvOS; web: WebGL. 3D graphics, OpenGL, GLSL.
-SKILLS
 I have 6 years experience as a lead programmer and software designer. I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have developed Mac applications for 9 years, iOS programs for 6 years, and web applications for 4 years. I have extensive experience programming with C and Objective-C. For the web, I have experience with PHP, MySQL, HTML5, CSS3, AJAX, WebGL, and have developed an in depth understanding of Javascript. I have also integrated language localizations into iOS and web applications. I am very familiar with the Xcode IDE and have experience with Subversion and GIT repositories. I have operated using the SCRUM agile software development techniques.
 I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have built in- house graphics frameworks in C for OpenGL, and in Javascript for WebGL. I have extensive experience programming with C, Objective-C, Javascript, and GLSL shaders. I have also integrated language localizations into iOS and web applications. I have worked with the Subversion and GIT source control systems, and have developed using the SCRUM agile software development techniques.
 EXPERIENCE
