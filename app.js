@@ -29,7 +29,7 @@ Email: snovakow@gmail.com
 LinkedIn: www.linkedin.com/in/scott-novakowski
 Address: Unit 2411 - 118 Balliol St
 Toronto, ON M4S 0A9, Canada`.split('\n');
-for(const line of contactLines) {
+for (const line of contactLines) {
 	contact.appendChild(document.createTextNode(line));
 	contact.appendChild(document.createElement('br'));
 }
@@ -38,17 +38,18 @@ const content = document.createElement('div');
 content.className = 'content';
 page.appendChild(content);
 
-const addHeader = (text)=>{
+const addHeader = (text) => {
 	const header = document.createElement('div');
 	header.className = 'header';
 	header.appendChild(document.createTextNode(text));
-	content.appendChild(header);	
+	content.appendChild(header);
 }
-const addParagraph = (text)=>{
+const addParagraph = (text, node = false) => {
 	const paragraph = document.createElement('div');
 	paragraph.className = 'paragraph';
-	paragraph.appendChild(document.createTextNode(text));
-	content.appendChild(paragraph);	
+	paragraph.appendChild(node ? text : document.createTextNode(text));
+	console.log(node ? text : document.createTextNode(text));
+	content.appendChild(paragraph);
 }
 
 addHeader('SUMMARY / PROFILE');
@@ -56,9 +57,35 @@ addParagraph('I am looking to advance my career as an OpenGL/WebGL developer, a 
 addParagraph('Experienced lead developer. DEEP Inc.: Apple, iOS, tvOS; web: WebGL. 3D graphics, OpenGL, GLSL.');
 
 addHeader('SKILLS');
+addParagraph('I have 6 years experience as a lead programmer and software designer. I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have developed Mac applications for 9 years, iOS programs for 6 years, and web applications for 4 years. I have extensive experience programming with C and Objective-C. For the web, I have experience with PHP, MySQL, HTML5, CSS3, AJAX, WebGL, and have developed an in depth understanding of Javascript. I have also integrated language localizations into iOS and web applications. I am very familiar with the Xcode IDE and have experience with Subversion and GIT repositories. I have operated using the SCRUM agile software development techniques.');
+addParagraph('I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have built in- house graphics frameworks in C for OpenGL, and in Javascript for WebGL. I have extensive experience programming with C, Objective-C, Javascript, and GLSL shaders. I have also integrated language localizations into iOS and web applications. I have worked with the Subversion and GIT source control systems, and have developed using the SCRUM agile software development techniques.');
+
+addHeader('EXPERIENCE');
+addParagraph('Senior Web Developer, DEEP Inc. — November 2015—Present');
+addParagraph('Scott Novakowski is a software developer. Scott is developing an interactive cinematic 360 video player as the web component of the Liquid Cinema platform for DEEP. Before that he was Lead Programmer and Software Designer at the University of Calgary for 6 years. During this time he developed “Zygote 3D Anatomy Atlas & Dissection Lab”, available for mobile devices on the iTunes App Store; and “ZygoteBodyU™, currently being commercialized and promoted by Zygote Media Group as the world’s leading digital wet lab for medical education.');
+addParagraph('Scott has experience with OpenGL/WebGL, and developing for the OSX and iOS platforms, as well as both client and server side web development.');
+addParagraph('Developing an interactive cinematic 360/VR video player as the web component of the Liquid Cinema platform for DEEP, as well as leading the development of the iOS and tvOS platforms.');
+
+const link = (url, title) => {
+	title ??= url;
+	const a = document.createElement('a');
+	a.href = url;
+	a.textContent = title;
+	a.target = "_blank";
+	return a;
+}
 
 addHeader('Magic of Flight');
-addParagraph('https://liquidcinemavr.com/fly/');
+addParagraph(link('https://liquidcinemavr.com/fly/'), true);
+
+addHeader('Lindsay Project');
+addParagraph(link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'), true);
+
+addHeader('Anatomy');
+addParagraph(link('https://www.youtube.com/@Zygote3D/videos'), true);
+
+addHeader('Liquid Cinema');
+addParagraph(link('https://liquidcinemavr.com'), true);
 
 addHeader('OMAF');
 addParagraph('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html');
@@ -69,14 +96,10 @@ addParagraph('• Worked closely with a team to integrate the OMAF dash streamin
 addParagraph('• Designed a custom dash download manager to accommodate the new format');
 addParagraph('• Integrated a C++ library into the Kotlin and Java code of the app');
 
+const makeList = () => {
+
+}
 const resume = `
-I have 6 years experience as a lead programmer and software designer. I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have developed Mac applications for 9 years, iOS programs for 6 years, and web applications for 4 years. I have extensive experience programming with C and Objective-C. For the web, I have experience with PHP, MySQL, HTML5, CSS3, AJAX, WebGL, and have developed an in depth understanding of Javascript. I have also integrated language localizations into iOS and web applications. I am very familiar with the Xcode IDE and have experience with Subversion and GIT repositories. I have operated using the SCRUM agile software development techniques.
-I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have built in- house graphics frameworks in C for OpenGL, and in Javascript for WebGL. I have extensive experience programming with C, Objective-C, Javascript, and GLSL shaders. I have also integrated language localizations into iOS and web applications. I have worked with the Subversion and GIT source control systems, and have developed using the SCRUM agile software development techniques.
-EXPERIENCE
-Senior Web Developer, DEEP Inc. — November 2015—Present
-Scott Novakowski is a software developer. Scott is developing an interactive cinematic 360 video player as the web component of the Liquid Cinema platform for DEEP. Before that he was Lead Programmer and Software Designer at the University of Calgary for 6 years. During this time he developed “Zygote 3D Anatomy Atlas & Dissection Lab”, available for mobile devices on the iTunes App Store; and “ZygoteBodyU™, currently being commercialized and promoted by Zygote Media Group as the world’s leading digital wet lab for medical education.
-Scott has experience with OpenGL/WebGL, and developing for the OSX and iOS platforms, as well as both client and server side web development.
-Developing an interactive cinematic 360/VR video player as the web component of the Liquid Cinema platform for DEEP, as well as leading the development of the iOS and tvOS platforms.
 University of Calgary; Calgary, AB — 2005—2015
 	❖The Lindsay Project, — May 2009—October 2015
 	•	Lead Programmer and Software Designer. The Lindsay project was funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary. The mandate was to develop an innovative teaching and learning environment based on 3D anatomy models. I have worked closely with Zygote Media Group, a company that provides the 3D computer models, to integrate their models of the complete human anatomy into Mac, iOS, and web applications. 
