@@ -5,6 +5,14 @@ body {
 	overflow-y: 'auto';
 }
 
+.page {
+	left: 96px;
+	right: 96px;
+    background-color: red;
+	position: absolute;
+	top: 96px;
+}
+
 .top {
 	width: 100%;
     background-color: red;
@@ -38,16 +46,26 @@ body {
     font-weight: 300;
 }
 
-.header {
-	background-color: lightgray; 
-	font-size: 48px;
-    font-weight: 600;
-	position: relative;
-}
-
 .content {
 	position: absolute;
 	top: 160px;
 	left: 0px;
 	width: 100%;
+}
+
+.header {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	background-color: lightgray; 
+	font-size: 18px;
+    font-weight: 600;
+	position: relative;
+}
+.paragraph {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	text-indent: 0px;
+	font-size: 16px;
+    font-weight: 500;
+	position: relative;
 }
