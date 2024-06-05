@@ -1,17 +1,48 @@
-const title = document.createElement('span');
-title.className = 'title';
-title.appendChild(document.createTextNode("Resume"));
-document.body.appendChild(title);
+const top = document.createElement('div');
+top.className = 'top';
+document.body.appendChild(top);
 
-const resume = `
-Scott Novakowski
-Lead Software Engineer
-Phone: (647) 465-3759
+const titleArea = document.createElement('div');
+titleArea.className = 'titleArea';
+top.appendChild(titleArea);
+
+const title = document.createElement('div');
+title.className = 'title';
+titleArea.appendChild(title);
+const subtitle = document.createElement('div');
+subtitle.className = 'subtitle';
+titleArea.appendChild(subtitle);
+
+document.body.appendChild(top);
+
+const contact = document.createElement('div');
+contact.className = 'contact';
+top.appendChild(contact);
+
+title.appendChild(document.createTextNode('Scott Novakowski'));
+subtitle.appendChild(document.createTextNode('Lead Software Engineer'));
+
+const contactLines = `Phone: (647) 465-3759
 Email: snovakow@gmail.com
 LinkedIn: www.linkedin.com/in/scott-novakowski
 Address: Unit 2411 - 118 Balliol St
-Toronto, ON M4S 0A9, Canada
-SUMMARY / PROFILE
+Toronto, ON M4S 0A9, Canada`.split('\n');
+for(const line of contactLines) {
+	contact.appendChild(document.createTextNode(line));
+	contact.appendChild(document.createElement('br'));
+}
+
+const content = document.createElement('div');
+content.className = 'content';
+document.body.appendChild(content);
+
+const header1 = document.createElement('div');
+header1.className = 'header';
+header1.appendChild(document.createTextNode('SUMMARY / PROFILE'));
+content.appendChild(header1);
+
+const resume = `
+
 I am looking to advance my career as an OpenGL/WebGL developer, a lead software developer and designer. 
 Experienced lead developer. DEEP Inc.: Apple, iOS, tvOS; web: WebGL. 3D graphics, OpenGL, GLSL.
 SKILLS
@@ -54,10 +85,11 @@ Proceedings of the 14th annual ACM international conference on Multimedia, Santa
 
 References available upon request
 `;
+
 const lines = resume.split('\n');
 for (const line of lines) {
 	const div = document.createElement('div');
 	div.appendChild(document.createTextNode(line));
-	document.body.appendChild(div);
-	document.body.appendChild(document.createElement('br'));
+	content.appendChild(div);
+	content.appendChild(document.createElement('br'));
 }
