@@ -63,8 +63,8 @@ body {
 }
 .paragraph {
 	margin-top: 4px;
-	margin-bottom: 4px;
-	text-indent: 0px;
+	margin-bottom: 8px;
+	text-indent: 48px;
 	font-size: 16px;
     font-weight: 500;
 	position: relative;
