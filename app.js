@@ -48,7 +48,6 @@ const addParagraph = (text, node = false) => {
 	const paragraph = document.createElement('div');
 	paragraph.className = 'paragraph';
 	paragraph.appendChild(node ? text : document.createTextNode(text));
-	console.log(node ? text : document.createTextNode(text));
 	content.appendChild(paragraph);
 }
 
@@ -65,6 +64,34 @@ addParagraph('Senior Web Developer, DEEP Inc. — November 2015—Present');
 addParagraph('Scott Novakowski is a software developer. Scott is developing an interactive cinematic 360 video player as the web component of the Liquid Cinema platform for DEEP. Before that he was Lead Programmer and Software Designer at the University of Calgary for 6 years. During this time he developed “Zygote 3D Anatomy Atlas & Dissection Lab”, available for mobile devices on the iTunes App Store; and “ZygoteBodyU™, currently being commercialized and promoted by Zygote Media Group as the world’s leading digital wet lab for medical education.');
 addParagraph('Scott has experience with OpenGL/WebGL, and developing for the OSX and iOS platforms, as well as both client and server side web development.');
 addParagraph('Developing an interactive cinematic 360/VR video player as the web component of the Liquid Cinema platform for DEEP, as well as leading the development of the iOS and tvOS platforms.');
+
+// const addList = (list, append) => {
+// 	const ul = document.createElement('ul');
+// 	if(append) content.appendChild(ul);
+
+// 		let prev = null;
+// 		for(const item of list){
+// 			if(typeof item === 'string') {
+// 				const li = document.createElement('li');
+// 				ul.appendChild(li);
+		
+// 				li.appendChild(document.createTextNode(item));	
+// 				prev = item;
+// 			} else {
+// 				prev?.appendChild(item);
+// 			}
+// 		}	
+// 	return ul;
+// }
+
+// const l2 = addList(['1', '1', '1']);
+// const l1 = addList([
+// 	'The Lindsay Project, — May 2009—October 2015', l2,
+// 	'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — May 2008—May 2009',
+// 	'Swarm Art Software Developer, University of Calgary; Calgary, AB — 2005—April 2008',
+// ], true);
+
+// l1.appendChild(l2);
 
 const link = (url, title) => {
 	title ??= url;
@@ -96,9 +123,6 @@ addParagraph('• Worked closely with a team to integrate the OMAF dash streamin
 addParagraph('• Designed a custom dash download manager to accommodate the new format');
 addParagraph('• Integrated a C++ library into the Kotlin and Java code of the app');
 
-const makeList = () => {
-
-}
 const resume = `
 University of Calgary; Calgary, AB — 2005—2015
 	❖The Lindsay Project, — May 2009—October 2015
