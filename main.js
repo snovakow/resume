@@ -14,4 +14,4 @@ const appInitialize = (title, version, css) => {
 
 	console.log(title + " Version: " + version);
 }
-appInitialize("Resume", "0.0.0", "main.css");
+appInitialize("Resume", "0.0.1", "main.css");

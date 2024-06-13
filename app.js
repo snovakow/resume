@@ -30,7 +30,9 @@ LinkedIn: www.linkedin.com/in/scott-novakowski
 Address: Unit 2411 - 118 Balliol St
 Toronto, ON M4S 0A9, Canada`.split('\n');
 for (const line of contactLines) {
-	contact.appendChild(document.createTextNode(line));
+	let hidden = "";
+	for (let i = 0; i < line.length; i++) hidden += "x";
+	contact.appendChild(document.createTextNode(hidden));
 	contact.appendChild(document.createElement('br'));
 }
 
@@ -38,6 +40,12 @@ const content = document.createElement('div');
 content.className = 'content';
 page.appendChild(content);
 
+const addSubHeader = (text) => {
+	const header = document.createElement('div');
+	header.className = 'subheader';
+	header.appendChild(document.createTextNode(text));
+	content.appendChild(header);
+}
 const addHeader = (text) => {
 	const header = document.createElement('div');
 	header.className = 'header';
@@ -74,7 +82,7 @@ addParagraph('Developing an interactive cinematic 360/VR video player as the web
 // 			if(typeof item === 'string') {
 // 				const li = document.createElement('li');
 // 				ul.appendChild(li);
-		
+
 // 				li.appendChild(document.createTextNode(item));	
 // 				prev = item;
 // 			} else {
@@ -102,19 +110,19 @@ const link = (url, title) => {
 	return a;
 }
 
-addHeader('Magic of Flight');
+addSubHeader('Magic of Flight');
 addParagraph(link('https://liquidcinemavr.com/fly/'), true);
 
-addHeader('Lindsay Project');
+addSubHeader('Lindsay Project');
 addParagraph(link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'), true);
 
-addHeader('Anatomy');
+addSubHeader('Anatomy');
 addParagraph(link('https://www.youtube.com/@Zygote3D/videos'), true);
 
-addHeader('Liquid Cinema');
+addSubHeader('Liquid Cinema');
 addParagraph(link('https://liquidcinemavr.com'), true);
 
-addHeader('OMAF');
+addSubHeader('OMAF');
 addParagraph('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html');
 addParagraph('MPEG OMAF Format Integration at Liquid Cinema');
 addParagraph('Oct 2019 - Dec 2019Oct 2019 - Dec 2019');
