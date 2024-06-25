@@ -6,26 +6,27 @@ body {
 }
 
 .page {
-	left: 96px;
-	right: 96px;
-    background-color: red;
+	/* left: 48px;
+	right: 48px; */
 	position: absolute;
-	top: 96px;
+	/* top: 48px; */
 }
 
 .top {
-	width: 100%;
-    background-color: red;
-	position: absolute;
-	top: 0px;
-	left: 0px;
+	display: flex;
+	justify-content: space-between;
+	/* width: 100%; */
+	padding-left: 48px;
+	padding-right: 48px;
+	padding-top: 48px;
+	padding-bottom: 24px;
+	overflow: none;
 }
 
 .titleArea {
-	position: absolute;
 	font-size: 48px;
     font-weight: 500;
-	width: 50%;
+	margin-right: 24px;
 }
 .title {
 	font-size: 48px;
@@ -37,19 +38,16 @@ body {
 }
 
 .contact {
-	position: absolute;
 	text-align: right;
-	top: 0px;
-	right: 0px;
-	width: 50%;
 	font-size: 18px;
     font-weight: 300;
+	margin-left: 24px;
 }
 
 .content {
-	position: absolute;
+	/* position: absolute;
 	top: 160px;
-	left: 0px;
+	left: 0px; */
 	width: 100%;
 }
 

@@ -30,9 +30,9 @@ LinkedIn: www.linkedin.com/in/scott-novakowski
 Address: Unit 2411 - 118 Balliol St
 Toronto, ON M4S 0A9, Canada`.split('\n');
 for (const line of contactLines) {
-	let hidden = "";
-	for (let i = 0; i < line.length; i++) hidden += "x";
-	contact.appendChild(document.createTextNode(hidden));
+	// let hidden = "";
+	// for (let i = 0; i < line.length; i++) hidden += "x";
+	contact.appendChild(document.createTextNode(line));
 	contact.appendChild(document.createElement('br'));
 }
 
