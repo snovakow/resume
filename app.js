@@ -24,11 +24,9 @@ top.appendChild(contact);
 title.appendChild(document.createTextNode('Scott Novakowski'));
 subtitle.appendChild(document.createTextNode('Lead Software Engineer'));
 
-const contactLines = `Phone: (647) 465-3759
-Email: snovakow@gmail.com
-LinkedIn: www.linkedin.com/in/scott-novakowski
-Address: Unit 2411 - 118 Balliol St
-Toronto, ON M4S 0A9, Canada`.split('\n');
+const contactLines = `+1 (647) 465-3759
+snovakow@gmail.com
+Toronto, ON, Canada`.split('\n');
 for (const line of contactLines) {
 	// let hidden = "";
 	// for (let i = 0; i < line.length; i++) hidden += "x";
@@ -59,11 +57,13 @@ const addParagraph = (text, node = false) => {
 	content.appendChild(paragraph);
 }
 
-addHeader('SUMMARY / PROFILE');
+addHeader('SUMMARY');
 addParagraph('I am looking to advance my career as an OpenGL/WebGL developer, a lead software developer and designer.');
 addParagraph('Experienced lead developer. DEEP Inc.: Apple, iOS, tvOS; web: WebGL. 3D graphics, OpenGL, GLSL.');
 
 addHeader('SKILLS');
+addParagraph('2 technical skills');
+addParagraph('2 soft skills');
 addParagraph('I have 6 years experience as a lead programmer and software designer. I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have developed Mac applications for 9 years, iOS programs for 6 years, and web applications for 4 years. I have extensive experience programming with C and Objective-C. For the web, I have experience with PHP, MySQL, HTML5, CSS3, AJAX, WebGL, and have developed an in depth understanding of Javascript. I have also integrated language localizations into iOS and web applications. I am very familiar with the Xcode IDE and have experience with Subversion and GIT repositories. I have operated using the SCRUM agile software development techniques.');
 addParagraph('I have acquired extensive experience as a 3D graphics programmer, having worked with OpenGL for 7 years, including OpenGL ES, OpenGL ES 2.0, and WebGL. I have built in- house graphics frameworks in C for OpenGL, and in Javascript for WebGL. I have extensive experience programming with C, Objective-C, Javascript, and GLSL shaders. I have also integrated language localizations into iOS and web applications. I have worked with the Subversion and GIT source control systems, and have developed using the SCRUM agile software development techniques.');
 
