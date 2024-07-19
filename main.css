@@ -1,6 +1,6 @@
 body {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight: 300;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
 	overflow-x: 'visible';
 	overflow-y: 'auto';
 }
@@ -25,23 +25,25 @@ body {
 
 .titleArea {
 	font-size: 48px;
-    font-weight: 500;
+	font-weight: 500;
 	margin-right: 24px;
 }
+
 .title {
 	font-size: 48px;
-    font-weight: 500;
+	font-weight: 500;
 }
+
 .subtitle {
 	font-size: 24px;
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .contact {
 	text-align: right;
 	font-size: 18px;
 	line-height: 26px;
-    font-weight: 300;
+	font-weight: 300;
 	margin-left: 24px;
 }
 
@@ -55,24 +57,25 @@ body {
 .header {
 	margin-top: 8px;
 	margin-bottom: 8px;
-	background-color: lightgray; 
 	font-size: 18px;
-    font-weight: 600;
+	font-weight: 600;
 	position: relative;
 }
+
 .subheader {
 	margin-top: 8px;
 	margin-bottom: 8px;
 	font-size: 14px;
-    font-weight: 600;
+	font-weight: 600;
 	position: relative;
 }
+
 .paragraph {
 	margin-top: 4px;
 	margin-bottom: 8px;
 	text-indent: 48px;
 	font-size: 14px;
 	line-height: 18px;
-    font-weight: 500;
+	font-weight: 500;
 	position: relative;
 }
