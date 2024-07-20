@@ -79,3 +79,28 @@ body {
 	font-weight: 500;
 	position: relative;
 }
+
+.bulletMain {
+	padding-bottom: 8px;
+}
+
+.bulletSub {
+	padding-bottom: 8px;
+}
+
+.publicationMain {
+	margin-bottom: 4px;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.publicationSub {
+	/* margin-top: 4px;
+	margin-bottom: 8px;
+	text-indent: 48px; */
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: normal;
+}
