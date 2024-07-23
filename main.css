@@ -10,6 +10,7 @@ body {
 	right: 96px;
 	position: absolute;
 	top: 96px;
+	padding-bottom: 48px;
 }
 
 .top {
@@ -24,25 +25,22 @@ body {
 }
 
 .titleArea {
-	font-size: 48px;
 	font-weight: 500;
 	margin-right: 24px;
 }
 
 .title {
-	font-size: 48px;
-	font-weight: 500;
+	font-size: 3em;
 }
 
 .subtitle {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: 1.5em;
 }
 
 .contact {
 	text-align: right;
-	font-size: 18px;
-	line-height: 26px;
+	font-size: 1em;
+	line-height: 1.5em;
 	font-weight: 300;
 	margin-left: 24px;
 }
@@ -55,9 +53,9 @@ body {
 } */
 
 .header {
-	margin-top: 8px;
+	margin-top: 16px;
 	margin-bottom: 8px;
-	font-size: 18px;
+	font-size: 1em;
 	font-weight: 600;
 	position: relative;
 }
@@ -65,7 +63,7 @@ body {
 .subheader {
 	margin-top: 8px;
 	margin-bottom: 8px;
-	font-size: 14px;
+	font-size: 1em;
 	font-weight: 600;
 	position: relative;
 }
@@ -73,14 +71,16 @@ body {
 .paragraph {
 	margin-top: 4px;
 	margin-bottom: 8px;
-	text-indent: 48px;
-	font-size: 14px;
-	line-height: 18px;
+	/* text-indent: 48px; */
+	font-size: 1em;
+	line-height: 1.5em;
 	font-weight: 500;
 	position: relative;
 }
 
 .bulletMain {
+	font-size: 1em;
+	line-height: 1.5em;
 	padding-bottom: 8px;
 }
 
@@ -89,18 +89,25 @@ body {
 }
 
 .publicationMain {
-	margin-bottom: 4px;
-	font-size: 14px;
-	line-height: 18px;
+	/* margin-bottom: 4px; */
+	font-size: 1em;
 	font-weight: bold;
 	text-decoration: underline;
+	margin-bottom: 4px;
 }
 
-.publicationSub {
-	/* margin-top: 4px;
-	margin-bottom: 8px;
-	text-indent: 48px; */
-	font-size: 14px;
-	line-height: 18px;
+.publicationSub1 {
+	font-size: 0.9em;
+	line-height: 1.1em;
 	font-weight: normal;
+	margin-bottom: 4px;
+}
+
+.publicationName {
+	font-weight: bold;
+}
+
+.publicationSub2 {
+	font-size: 1em;
+	line-height: 1.2em;
 }
