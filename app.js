@@ -85,16 +85,14 @@ addHeader('SUMMARY');
 addParagraph('I am looking to advance my career as a computer programmer, expanding my scope of responsability, and having a larger impact.');
 
 addHeader('SKILLS');
-addParagraph('I have developed Virtual and Augmented Reality WebXR applications. I have experience developing for the Mac, iPhone, and AppleTV platforms. I have developed client web applications for 3D Human Anatomy, 360 3D video, and multi-client live video streaming');
-addParagraph('Experienced lead developer. DEEP Inc.');
-addParagraph('I am experienced developing 3D Graphics, encoding and rendering video. 3D graphics OpenGL, GLSL, WebGL, GLES, and GLES2.');
-addParagraph('360 and stereoscopic video encoding and rendering video.');
+addParagraph('I have developed front and back end applications, for Web and Apple platfoms, as well as Virtual and Augmented reality.');
+addParagraph('I am an experienced 3D graphics programmer using OpenGL and family, GLSL, GLES, ES2, and WebGL.');
+addParagraph('360° and stereoscopic VR Video encoding and rendering. WebXR applications. I have experience developing for the Mac, iPhone, and AppleTV platforms. I have developed client web applications for 3D Human Anatomy, 360 3D video, and multi-client live video streaming');
 
-addParagraph('2 technical skills');
-addParagraph('2 soft skills');
 addParagraph('I have worked with interns and summer students throughout my career.');
-addParagraph('OpenGL, WebGL, OpenGL ES, OpenGL ES 2.0, and WebGL. I have extensive experience programming with C and Objective-C.');
-addParagraph('I have worked with servers and have back-end experience using PHP and MySQL.');
+addParagraph('C and Objective-C.');
+addParagraph('I have worked with servers and have back-end experience using PHP and MySQL, and have .');
+addParagraph('Colyseus multi-user, Feathers full-stack framework. Ant Media streaming PeerJS');
 
 addHeader('EXPERIENCE');
 const experience = createItem([
@@ -103,6 +101,10 @@ const experience = createItem([
 		link('https://liquidcinemavr.com'),
 		'Developed an interactive cinematic 360/VR video player as the web component of the Liquid Cinema platform, and was Senior iPhone and AppleTV developer.',
 		'Developed and integrated a multi-client live video streaming VR compatible 3D conferencing solution into the Liquid Cinema web player.',
+		'Heatmap',
+		'Metaverse like environment',
+		'Conestoga College Collaboration',
+		'Developing for multiple platforms, Mac, iPhone, AppleTV, Mac.',
 		'"Magic of Flight" interactive VR educationsal experience, Lead WebXR Developer',
 		[
 			'2021 WebXR Poly Awards winner:',
