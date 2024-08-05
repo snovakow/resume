@@ -85,28 +85,36 @@ addHeader('SUMMARY');
 addParagraph('I am looking to advance my career as a computer programmer, expanding my scope of responsability, and having a larger impact.');
 
 addHeader('SKILLS');
-addParagraph('I have developed front and back end applications, for Web and Apple platfoms, as well as Virtual and Augmented reality.');
-addParagraph('I am an experienced 3D graphics programmer using OpenGL and family, GLSL, GLES, ES2, and WebGL.');
-addParagraph('360° and stereoscopic VR Video encoding and rendering. WebXR applications. I have experience developing for the Mac, iPhone, and AppleTV platforms. I have developed client web applications for 3D Human Anatomy, 360 3D video, and multi-client live video streaming');
-
-addParagraph('I have worked with interns and summer students throughout my career.');
-addParagraph('C and Objective-C.');
-addParagraph('I have worked with servers and have back-end experience using PHP and MySQL, and have .');
-addParagraph('Colyseus multi-user, Feathers full-stack framework. Ant Media streaming PeerJS');
+addParagraph('I have developed front and back end applications, for Web and Mac, iPhone, and AppleTV platfoms, as well as Virtual and Augmented reality.');
+addParagraph('I am an experienced 3D graphics programmer using OpenGL, ES2, and WebGL.');
+addParagraph('I have worked with 360° and stereoscopic VR Video encoding and rendering. I have worked with servers and have back-end experience using PHP and MySQL and have worked with live multi-user systems, and multi-client video streaming.');
+addParagraph('I have supervised interns and mentored summer students throughout my career.');
 
 addHeader('EXPERIENCE');
+const boldSection = (text) => {
+	const bold = document.createElement('span');
+	bold.className = 'header';
+	bold.appendChild(document.createTextNode(text));
+	return bold;
+}
 const experience = createItem([
-	'Senior Developer, Liquid Cinema — November 2015—Present',
+	boldSection('Senior Developer, Liquid Cinema — November 2015—Present'),
 	[
 		link('https://liquidcinemavr.com'),
-		'Developed an interactive cinematic 360/VR video player as the web component of the Liquid Cinema platform, and was Senior iPhone and AppleTV developer.',
-		'Developed and integrated a multi-client live video streaming VR compatible 3D conferencing solution into the Liquid Cinema web player.',
-		'Heatmap',
-		'Metaverse like environment',
-		'Conestoga College Collaboration',
-		'Developing for multiple platforms, Mac, iPhone, AppleTV, Mac.',
+		'Lead the front-end player development for the web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
+		'Developed Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions',
+		'Senior client side Apple iOS and tvOS components of the Liquid Cinema platform.',
+		'Developed AR and VR support for the Web Player using the WebXR standard',
+
+		'OMAF 360° VR Video Streaming',
+		[
+			'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform.',
+			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
+		],
+
 		'"Magic of Flight" interactive VR educationsal experience, Lead WebXR Developer',
 		[
+			'Meta collaboration to create an interactive web experience for the Quest VR Headset',
 			'2021 WebXR Poly Awards winner:',
 			[
 				'Education Experience of the Year',
@@ -115,15 +123,20 @@ const experience = createItem([
 			],
 			link('https://liquidcinemavr.com/fly/'),
 		],
-		'OMAF 360 VR Video Streaming',
+
+		'Multi user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
+
+		'Senior Metaverse collaborative environment front end Lead.',
 		[
-			'Worked with Fraunhofer HHI to integrate OMAF video streaming into the Liquid Cinema web platform.',
-			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
+			'Conestoga College Collaboration.',
+			'3D Avatar conferencing solution.',
+			'Virtual Reality multi-user live interactive environment.',
+			'Messaging and live video and screenshare streaming.',
 		],
 	],
-	'University of Calgary; Calgary, AB — 2005—2015',
+	boldSection('University of Calgary; Calgary, AB — 2005—2015'),
 	[
-		'The Lindsay Project, — May 2009—October 2015',
+		'The Lindsay Project, — 2009—2015',
 		[
 			link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
 			'Lead Programmer and Software Designer at the University of Calgary for 6 years. During this time he developed “Zygote 3D Anatomy Atlas & Dissection Lab”, available for mobile devices on the iTunes App Store; and “ZygoteBodyU™, currently being commercialized and promoted by Zygote Media Group as the world’s leading digital wet lab for medical education.',
@@ -136,21 +149,21 @@ const experience = createItem([
 			'Developed front and back-end applications. real-time rendering in applications on the Mac, iOS, and web platforms. 3D Model pipeline',
 			'Teaching tool',
 		],
-		'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — May 2008—May 2009',
+		'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — 2008',
 		[
 			'OpenGL',
 			'Developed interactive realtime 3D visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program at the University of Calgary.',
 		],
 
-		'Swarm Art Software Developer, University of Calgary; Calgary, AB — 2005—April 2008',
+		'Swarm Art Software Developer, University of Calgary; Calgary, AB — 2005—2007',
 		[
 			'Artistic based apps and tools that use agent based swarm systems to generate visuals and facilitate interactive displays.',
 			'Featured in:',
 			[
 				'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007.',
-				'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science in 2006.',
+				'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science, 2006.',
 				'Victoria Conference Center street front window interctive public display, Victoria BC, August to December 2006',
-				'Discovery Channel "A Daily Planet" segment on swarm intelligence aired on October 23, 2006.',
+				'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006.',
 				'Nickle Galleries Museum interactive display, Calgary AB, 2005.',
 			]
 		],
