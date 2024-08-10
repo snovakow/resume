@@ -15,7 +15,8 @@ module.exports = {
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: 'main.css', to: 'main.css' }
+				{ from: 'main.css', to: 'main.css' },
+				{ from: 'coverletter.html', to: 'coverletter.html' }
 			]
 		}),
 		new HtmlWebpackPlugin({

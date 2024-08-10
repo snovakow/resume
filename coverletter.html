@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+	<script>
+		const link = (url, title) => {
+			title ??= url;
+			const a = document.createElement('a');
+			a.href = url;
+			a.textContent = title;
+			a.target = "_blank";
+			return a;
+		}
+		const text1 = 'I have an interest in biochemistry, and spent two years as an intended Biochemistry major before switching to Computer Science. Having worked for the University of Calgary School of Medicine, I’ve worked with the ';
+		const link1 = link('https://en.m.wikipedia.org/wiki/Visible_Human_Project', 'Visible Human Project');
+		const text2 = ' data, and ';
+		const link2 = link('https://www.rcsb.org', 'Protein Data Bank');
+		const text3 = '. I am looking to expand the scope of my impact as a Computer Scientist, and I’m looking for this opportunity to provide deeper meaning to my work, in an area that I’m particularly interested in.';
+		const text4 = 'I have worked with Zygote 3D human anatomy models https://www.zygotebody.com Developed “Zygote 3D Anatomy Atlas & Dissection Lab”';
+		
+		document.body.appendChild(document.createTextNode(text1));
+		document.body.appendChild(link1);
+		document.body.appendChild(document.createTextNode(text2));
+		document.body.appendChild(link2);
+		document.body.appendChild(document.createTextNode(text3));
+	</script>
+</body>
+
+</html>

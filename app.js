@@ -82,12 +82,12 @@ const createItem = (item) => {
 }
 
 addHeader('SUMMARY');
-addParagraph('I am looking to advance my career as a computer programmer, expanding my scope of responsability, and having a larger impact.');
+addParagraph('I am looking to advance my career as a software developer, expanding my scope of responsibility, and having a larger impact.');
 
 addHeader('SKILLS');
-addParagraph('I have developed front and back end applications, for Web and Mac, iPhone, and AppleTV platfoms, as well as Virtual and Augmented reality.');
 addParagraph('I am an experienced 3D graphics programmer using OpenGL, ES2, and WebGL.');
-addParagraph('I have worked with 360° and stereoscopic VR Video encoding and rendering. I have worked with servers and have back-end experience using PHP and MySQL and have worked with live multi-user systems, and multi-client video streaming.');
+addParagraph('I have developed applications for the Web, Mac, iPhone, and AppleTV platforms, as well as Virtual and Augmented reality.');
+addParagraph('I have worked with 360° and stereoscopic VR Video encoding and rendering. I have worked with servers and have backend experience using PHP and MySQL, and have worked with live multi-user systems, and multi-client video streaming.');
 addParagraph('I have supervised interns and mentored summer students throughout my career.');
 
 addHeader('EXPERIENCE');
@@ -101,10 +101,10 @@ const experience = createItem([
 	boldSection('Senior Developer, Liquid Cinema — November 2015—Present'),
 	[
 		link('https://liquidcinemavr.com'),
-		'Lead the front-end player development for the web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
-		'Developed Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions',
-		'Senior client side Apple iOS and tvOS components of the Liquid Cinema platform.',
-		'Developed AR and VR support for the Web Player using the WebXR standard',
+		'Built the frontend web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
+		'Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions.',
+		'Responsible for client side Apple iOS and tvOS components of the Liquid Cinema platform.',
+		'Developed Virtual and Augmented Reality support for the web component of the Liquid Cinema platform using the WebXR standard.',
 
 		'OMAF 360° VR Video Streaming',
 		[
@@ -112,9 +112,9 @@ const experience = createItem([
 			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
 		],
 
-		'"Magic of Flight" interactive VR educationsal experience, Lead WebXR Developer',
+		'"Magic of Flight" interactive VR educational experience, Lead WebXR Developer',
 		[
-			'Meta collaboration to create an interactive web experience for the Quest VR Headset',
+			'Meta collaboration to create an interactive web experience for the Quest VR Headset.',
 			'2021 WebXR Poly Awards winner:',
 			[
 				'Education Experience of the Year',
@@ -126,33 +126,31 @@ const experience = createItem([
 
 		'Multi user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
 
-		'Senior Metaverse collaborative environment front end Lead.',
+		'Senior Metaverse collaborative environment frontend Lead',
 		[
 			'Conestoga College Collaboration.',
 			'3D Avatar conferencing solution.',
 			'Virtual Reality multi-user live interactive environment.',
-			'Messaging and live video and screenshare streaming.',
+			'Messaging and live video and screen-share streaming.',
 		],
 	],
 	boldSection('University of Calgary; Calgary, AB — 2005—2015'),
 	[
-		'The Lindsay Project, — 2009—2015',
+		'The Lindsay Project, Lead Programmer and Software Designer — 2009—2015',
 		[
+			'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary.',
 			link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
-			'Lead Programmer and Software Designer at the University of Calgary for 6 years. During this time he developed “Zygote 3D Anatomy Atlas & Dissection Lab”, available for mobile devices on the iTunes App Store; and “ZygoteBodyU™, currently being commercialized and promoted by Zygote Media Group as the world’s leading digital wet lab for medical education.',
-			'Lead Programmer and Software Designer. The Lindsay project was funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary. The mandate was to develop an innovative teaching and learning environment based on 3D anatomy models. I have worked closely with Zygote Media Group, a company that provides the 3D computer models, to integrate their models of the complete human anatomy into Mac, iOS, and web applications.',
-			'Released commercially as “Zygote 3D Anatomy Atlas & Dissection Lab” on the iTunes App Store.',
+			'Developed “Zygote 3D Anatomy Atlas & Dissection Lab.”',
 			[
+				'iPhone application released commercially to the iTunes App Store.',
 				link('https://www.youtube.com/@Zygote3D/videos'),
 			],
-			'Atlas, 3D Human anatomy application iOS and web applications. OpenGL ES, ES2, Atlas is currently being commercialized as ZygoteBodyU, an integrative online resource for anatomy education targeting universities, promoted through Zygote Media Group.',
-			'Developed front and back-end applications. real-time rendering in applications on the Mac, iOS, and web platforms. 3D Model pipeline',
-			'Teaching tool',
+			'Developed "Atlas", a 3D Human anatomy education oriented web application.',
 		],
+
 		'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — 2008',
 		[
-			'OpenGL',
-			'Developed interactive realtime 3D visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program at the University of Calgary.',
+			'Developed interactive realtime 3D OpenGL visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program at the University of Calgary.',
 		],
 
 		'Swarm Art Software Developer, University of Calgary; Calgary, AB — 2005—2007',
@@ -162,7 +160,7 @@ const experience = createItem([
 			[
 				'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007.',
 				'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science, 2006.',
-				'Victoria Conference Center street front window interctive public display, Victoria BC, August to December 2006',
+				'Victoria Conference Center street front window interactive public display, Victoria BC, August to December 2006',
 				'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006.',
 				'Nickle Galleries Museum interactive display, Calgary AB, 2005.',
 			]
