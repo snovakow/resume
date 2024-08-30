@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
@@ -6,7 +5,7 @@ module.exports = {
 	mode: "production",
 	entry: './main.js',
 	output: {
-		filename: '[chunkhash].js',
+		filename: 'main.js',
 		path: path.resolve(__dirname, '../../live/resume'),
 		chunkFilename: '[chunkhash].js',
 		clean: true,
@@ -18,9 +17,6 @@ module.exports = {
 				{ from: 'main.css', to: 'main.css' },
 				{ from: 'coverletter.html', to: 'coverletter.html' }
 			]
-		}),
-		new HtmlWebpackPlugin({
-			title: ""
 		})
 	],
 };
