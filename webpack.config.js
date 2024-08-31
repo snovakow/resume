@@ -14,8 +14,8 @@ module.exports = {
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: 'main.css', to: 'main.css' },
 				{ from: 'coverletter.html', to: 'coverletter.html' },
+				{ from: 'main.css', to: 'main.css' },
 				{ from: 'index.html', to: 'index.html' }
 			]
 		})
