@@ -139,13 +139,18 @@ const experience = createItem([
 		'The Lindsay Project, Lead Programmer and Software Designer — 2009—2015',
 		[
 			'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary.',
-			link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
+			'I worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications.',
 			'Developed “Zygote 3D Anatomy Atlas & Dissection Lab.”',
 			[
 				'iPhone application released commercially to the iTunes App Store.',
+				'Currently not available, but reference videos are available:',
 				link('https://www.youtube.com/@Zygote3D/videos'),
 			],
 			'Developed "Atlas", a 3D Human anatomy education oriented web application.',
+			[
+				'CBC segment on The Lindsay Project, featuring the Atlas application:',
+				link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
+			],
 		],
 
 		'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — 2008',
