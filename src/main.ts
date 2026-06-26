@@ -32,8 +32,6 @@ const contactLines = `+1 (647) 465-3759
 snovakow@gmail.com
 Toronto, ON, Canada`.split('\n');
 for (const line of contactLines) {
-	// let hidden = "";
-	// for (let i = 0; i < line.length; i++) hidden += "x";
 	contact.appendChild(document.createTextNode(line));
 	contact.appendChild(document.createElement('br'));
 }
@@ -66,22 +64,32 @@ const link = (url: string, title?: string) => {
 }
 
 type RecursiveArray<T> = Array<T | RecursiveArray<T>>;
-type RecursiveArrayType = string | Node;
-const createItem = (item: RecursiveArray<RecursiveArrayType> | RecursiveArrayType) => {
-	if (Array.isArray(item)) {
-		const ul = document.createElement('ul');
-		ul.className = 'bulletMain';
-		for (const element of item) ul.appendChild(createItem(element));
-		return ul;
+type ListValue = string | Node;
+const createListNode = (item: RecursiveArray<ListValue> | ListValue) => {
+	if (!Array.isArray(item)) {
+		const li = document.createElement('li');
+		li.className = 'bulletSub';
+		const node = typeof item === 'string' ? document.createTextNode(item) : item;
+		li.appendChild(node);
+		return li;
 	}
 
-	const li = document.createElement('li');
-	li.className = 'bulletSub';
+	const ul = document.createElement('ul');
+	ul.className = 'bulletMain';
+	for (const element of item) {
+		if (!Array.isArray(element)) {
+			ul.appendChild(createListNode(element));
+			continue;
+		}
 
-	if (typeof item === 'string') li.appendChild(document.createTextNode(item));
-	else li.appendChild(item);
-
-	return li;
+		const parentLi = ul.lastElementChild as HTMLLIElement | null;
+		if (!parentLi) {
+			console.warn('Invalid list structure: nested arrays must follow a list item to become a sublist.');
+			continue;
+		}
+		parentLi.appendChild(createListNode(element));
+	}
+	return ul;
 }
 
 addHeader('SUMMARY');
@@ -100,7 +108,7 @@ const boldSection = (text: string) => {
 	bold.appendChild(document.createTextNode(text));
 	return bold;
 }
-const experience = createItem([
+const experience = createListNode([
 	boldSection('Senior Developer, Liquid Cinema — November 2015—Present'),
 	[
 		link('https://liquidcinemavr.com'),
@@ -208,7 +216,7 @@ const createPublication = (main: string, sub1a: string, subName: string, sub1b: 
 	return element;
 }
 addHeader('PUBLICATIONS');
-const publications = createItem([
+const publications = createListNode([
 	createPublication(
 		'LINDSAY Virtual Human: Multi-Scale, Agent-based, and Interactive',
 		'C. Jacob, S. von Mammen, T. Davison, A. Sarraf-Shirazi, V. Sarpe, A. Esmaeili, D. Phillips, I. Yazdanbod, ',
