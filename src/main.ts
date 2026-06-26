@@ -42,25 +42,21 @@ const content = document.createElement('div');
 content.className = 'content';
 page.appendChild(content);
 
-const addSubHeader = (text) => {
-  const header = document.createElement('div');
-  header.className = 'subheader';
-  header.appendChild(document.createTextNode(text));
-  content.appendChild(header);
-}
-const addHeader = (text) => {
+const addHeader = (text: string) => {
   const header = document.createElement('div');
   header.className = 'header';
   header.appendChild(document.createTextNode(text));
   content.appendChild(header);
 }
-const addParagraph = (text) => {
+
+const addParagraph = (text: string) => {
   const paragraph = document.createElement('div');
   paragraph.className = 'paragraph';
   paragraph.appendChild(document.createTextNode(text));
   content.appendChild(paragraph);
 }
-const link = (url, title) => {
+
+const link = (url: string, title?: string) => {
   title ??= url;
   const a = document.createElement('a');
   a.href = url;
@@ -68,7 +64,10 @@ const link = (url, title) => {
   a.target = "_blank";
   return a;
 }
-const createItem = (item) => {
+
+type RecursiveArray<T> = Array<T | RecursiveArray<T>>;
+type RecursiveArrayType = string | Node;
+const createItem = (item: RecursiveArray<RecursiveArrayType> | RecursiveArrayType) => {
   if (Array.isArray(item)) {
     const ul = document.createElement('ul');
     ul.className = 'bulletMain';
@@ -95,7 +94,7 @@ addParagraph('I have worked with 360° and stereoscopic VR Video encoding and re
 addParagraph('I have supervised interns and mentored summer students throughout my career.');
 
 addHeader('EXPERIENCE');
-const boldSection = (text) => {
+const boldSection = (text: string) => {
   const bold = document.createElement('span');
   bold.className = 'header';
   bold.appendChild(document.createTextNode(text));
@@ -181,7 +180,7 @@ content.appendChild(experience);
 addHeader('EDUCATION');
 addParagraph('University of Calgary, Calgary, AB — Bachelor of Science in Computer Science, 2006.');
 
-const createPublication = (main, sub1a, subName, sub1b, sub2) => {
+const createPublication = (main: string, sub1a: string, subName: string, sub1b: string, sub2: string) => {
   const mainElement = document.createElement('div');
   mainElement.className = 'publicationMain';
   mainElement.appendChild(document.createTextNode(main));
