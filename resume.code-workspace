@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			".gitignore": true,
+			"node_modules": true,
+			"package-lock.json": true,
+			"package.json": true,
+			"resume.code-workspace": true,
+			"tsconfig.json": true
+		}
+	}
+}
