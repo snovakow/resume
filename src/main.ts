@@ -70,11 +70,19 @@ const addHeader = (text: string) => {
 	content.appendChild(header);
 }
 
-const addParagraph = (text: string) => {
+const addParagraph = (text?: string) => {
 	const paragraph = document.createElement('div');
 	paragraph.className = 'paragraph';
-	paragraph.appendChild(document.createTextNode(text));
+	if (text) paragraph.appendChild(document.createTextNode(text));
 	content.appendChild(paragraph);
+	return paragraph;
+}
+
+const makeBoldLine = (text: string) => {
+	const line = document.createElement('div');
+	line.className = 'bold';
+	line.appendChild(document.createTextNode(text));
+	return line;
 }
 
 type RecursiveArray<T> = Array<T | RecursiveArray<T>>;
@@ -200,7 +208,9 @@ const experience = createListNode([
 content.appendChild(experience);
 
 addHeader('EDUCATION');
-addParagraph('University of Calgary, Calgary, AB — Bachelor of Science in Computer Science, 2006.');
+const education = addParagraph();
+education.appendChild(makeBoldLine('Bachelor of Science in Computer Science'));
+education.appendChild(document.createTextNode('University of Calgary, AB – 2006'));
 
 const createPublication = (main: string, sub1a: string, subName: string, sub1b: string, sub2: string) => {
 	const mainElement = document.createElement('div');
@@ -213,7 +223,7 @@ const createPublication = (main: string, sub1a: string, subName: string, sub1b: 
 	subElement1.appendChild(document.createTextNode(sub1a));
 
 	const subElementName = document.createElement('span');
-	subElementName.className = 'publicationName';
+	subElementName.className = 'bold';
 	subElementName.appendChild(document.createTextNode(subName));
 	subElement1.appendChild(subElementName);
 
