@@ -255,5 +255,3 @@ const publications = createListNode([
 	),
 ]);
 content.appendChild(publications);
-
-addParagraph('References available upon request');
