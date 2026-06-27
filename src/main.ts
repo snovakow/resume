@@ -28,13 +28,36 @@ top.appendChild(contact);
 title.appendChild(document.createTextNode('Scott Novakowski'));
 subtitle.appendChild(document.createTextNode('Senior Software Engineer'));
 
-const contactLines = `+1 (647) 465-3759
-snovakow@gmail.com
-Toronto, ON, Canada`.split('\n');
-for (const line of contactLines) {
-	contact.appendChild(document.createTextNode(line));
-	contact.appendChild(document.createElement('br'));
+const link = (url: string, title?: string) => {
+	title ??= url;
+	const a = document.createElement('a');
+	a.href = url;
+	a.textContent = title;
+	a.target = "_blank";
+	return a;
 }
+
+const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>) => {
+	for (const line of lines) {
+		contact.appendChild(document.createTextNode(line));
+		contact.appendChild(document.createElement('br'));
+	}
+	let first = true;
+	for (const link of links) {
+		if (first) first = false;
+		else contact.appendChild(document.createTextNode(' | '));
+		contact.appendChild(link);
+	}
+}
+createContact([
+	"+1 (647) 465-3759",
+	"snovakow@gmail.com",
+	"Toronto, ON, Canada",
+], [
+	link('https://github.com/snovakow', 'GitHub'),
+	link('https://snovakow.com', 'Website'),
+	link('https://www.linkedin.com/in/snovakow', 'LinkedIn'),
+]);
 
 const content = document.createElement('div');
 content.className = 'content';
@@ -52,15 +75,6 @@ const addParagraph = (text: string) => {
 	paragraph.className = 'paragraph';
 	paragraph.appendChild(document.createTextNode(text));
 	content.appendChild(paragraph);
-}
-
-const link = (url: string, title?: string) => {
-	title ??= url;
-	const a = document.createElement('a');
-	a.href = url;
-	a.textContent = title;
-	a.target = "_blank";
-	return a;
 }
 
 type RecursiveArray<T> = Array<T | RecursiveArray<T>>;
