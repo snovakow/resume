@@ -34,6 +34,7 @@ const link = (url: string, title?: string) => {
 	a.href = url;
 	a.textContent = title;
 	a.target = "_blank";
+	a.rel = "noopener noreferrer";
 	return a;
 }
 
