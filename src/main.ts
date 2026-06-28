@@ -171,8 +171,8 @@ makeExperience(
 		link('https://liquidcinemavr.com'),
 		'Built the frontend web component of the Liquid Cinema platform, a browser-native, interactive cinematic 360° video WebGL player',
 		'Developed backend storage for user viewing directions and a frontend heat map-style visualization to represent view concentration',
-		'Responsible for client-side Apple iOS and tvOS components of the Liquid Cinema platform',
-		'Developed Virtual and Augmented Reality support using the WebXR standard for the web-based Liquid Cinema platform',
+		'Developed client-side Apple iOS and tvOS components of the Liquid Cinema platform',
+		'Developed virtual and augmented reality support using the WebXR standard for the web-based Liquid Cinema platform',
 		'FFmpeg video encoding and Vimeo video hosting integration',
 
 		'OMAF 360° VR Video Streaming',
@@ -193,13 +193,13 @@ makeExperience(
 			link('https://liquidcinemavr.com/fly/'),
 		],
 
-		'Multi-user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
+		'Multi-user WebRTC live web video chat integration using PeerJS with Colyseus and Feathers backend systems',
 
-		'Senior Metaverse collaborative environment frontend Lead',
+		'Senior frontend lead for a collaborative metaverse environment',
 		[
-			'Conestoga College Collaboration',
-			'3D Avatar conferencing solution',
-			'Virtual Reality multi-user live interactive environment',
+			'Conestoga College collaboration',
+			'3D avatar conferencing solution',
+			'Virtual reality multi-user live interactive environment',
 			'Messaging and live video and screen-share streaming',
 		],
 	]
@@ -210,7 +210,7 @@ makeExperience(
 	[
 		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary',
 		'Worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications',
-		'Developed “Zygote 3D Anatomy Atlas & Dissection Lab”',
+		'Developed "Zygote 3D Anatomy Atlas & Dissection Lab"',
 		[
 			'Released as an iPhone and iPad app on the iTunes App Store',
 			'Now archived, references available:',
@@ -221,7 +221,7 @@ makeExperience(
 				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0'),
 			],
 		],
-		'Developed "Atlas", a 3D Human anatomy education oriented web application',
+		'Developed "Atlas", a 3D human anatomy education-oriented web application',
 		[
 			'CBC segment on The Lindsay Project, featuring the Atlas application:',
 			[
@@ -241,11 +241,11 @@ makeExperience(
 	'Swarm Art Software Developer',
 	'University of Calgary — 2005 to 2007',
 	[
-		'Artistic based apps and tools that use agent based swarm systems to generate visuals and facilitate interactive displays',
+		'Art-based apps and tools that use agent-based swarm systems to generate visuals and facilitate interactive displays',
 		'Featured in:',
 		[
 			'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007',
-			'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science, 2006',
+			'Digital\'06: "Bio/Med SciART" submission accepted for public display in the New York Hall of Science, 2006',
 			'Victoria Conference Center street front window interactive public display, Victoria BC, August to December 2006',
 			'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006',
 			'Nickle Galleries Museum interactive display, Calgary AB, 2005',
@@ -256,7 +256,7 @@ makeExperience(
 addHeader('EDUCATION');
 const education = addParagraph();
 education.appendChild(makeBoldLine('Bachelor of Science in Computer Science'));
-education.appendChild(document.createTextNode('University of Calgary, AB – 2006'));
+education.appendChild(document.createTextNode('University of Calgary, AB — 2006'));
 
 const createPublication = (main: string, sub1a: string, subName: string, sub1b: string, sub2: string) => {
 	const mainElement = document.createElement('div');
