@@ -130,11 +130,10 @@ const makeSkillLine = (title: string, description: string) => {
 }
 
 addHeader('SUMMARY');
-addParagraph(`Passionate and creative software developer with a variety of experience — from 3D graphics and immersive VR/AR 
-	experiences to video encoding, real-time multiplayer systems, mobile development, and interactive educational applications. 
-	I bring experience across diverse platforms (web, iOS, tvOS, Meta Quest) as well as mastering specialized territories like WebGL rendering, 
-	FFmpeg-based video workflows, and WebXR. Driven by a strong desire for problem-solving and building work with lasting impact, 
-	I thrive in roles that challenge me to grow, take on greater responsibility, and contribute meaningfully.`);
+addParagraph(`My diverse work spans 3D graphics, immersive VR/AR, video encoding, real-time multiplayer, 
+	and mobile applications.  I’m driven by genuine curiosity and a desire to delve deeply into problems, 
+	which makes me particularly drawn to projects that blend technical complexity with creative potential. 
+	I thrive when my work has a meaningful impact.`);
 
 addHeader('SKILLS');
 content.appendChild(createListNode([
@@ -234,14 +233,14 @@ makeExperience(
 	'Vaccine Design and Implementation Project',
 	'University of Calgary — 2008',
 	[
-		'Developed interactive real-time 3D OpenGL visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program',
+		'Developed interactive real-time 3D OpenGL visualizations for a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program',
 	]
 );
 makeExperience(
 	'Swarm Art Software Developer',
 	'University of Calgary — 2005 to 2007',
 	[
-		'Art-based apps and tools that use agent-based swarm systems to generate visuals and facilitate interactive displays',
+		'Built agent-based swarm systems to generate visuals and facilitate interactive art displays',
 		'Featured in:',
 		[
 			'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007',
