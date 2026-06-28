@@ -114,14 +114,42 @@ const createListNode = (item: RecursiveArray<ListValue> | ListValue) => {
 	return ul;
 }
 
+const makeBoldSegment = (text: string) => {
+	const bold = document.createElement('span');
+	bold.className = 'bold';
+	bold.appendChild(document.createTextNode(text));
+	return bold;
+}
+const makeSkillLine = (title: string, description: string) => {
+	const line = document.createElement('span');
+	line.appendChild(makeBoldSegment(title));
+	line.appendChild(document.createTextNode(': ' + description));
+
+	return line;
+}
+
 addHeader('SUMMARY');
-addParagraph('I am looking to advance my career as a software developer, expanding my scope of responsibility, and having a larger impact.');
+addParagraph(`Passionate and creative software developer with a variety of experience — from 3D graphics and immersive VR/AR 
+	experiences to video encoding, real-time multiplayer systems, mobile development, and interactive educational applications. 
+	I bring experience across diverse platforms (web, iOS, tvOS, Meta Quest) as well as mastering specialized territories like WebGL rendering, 
+	FFmpeg-based video workflows, and WebXR. Driven by a strong desire for problem-solving and building work with lasting impact, 
+	I thrive in roles that challenge me to grow, take on greater responsibility, and contribute meaningfully.`);
 
 addHeader('SKILLS');
-addParagraph('I am an experienced 3D graphics programmer using OpenGL, ES2, and WebGL.');
-addParagraph('I have developed applications for the Web, Mac, iPhone, and AppleTV platforms, as well as Virtual and Augmented reality.');
-addParagraph('I have worked with 360° and stereoscopic VR Video encoding and rendering. I have worked with servers and have backend experience using PHP and MySQL, and have worked with live multi-user systems, and multi-client video streaming.');
-addParagraph('I have supervised interns and mentored summer students throughout my career.');
+content.appendChild(createListNode([
+	makeSkillLine('3D Graphics & Immersive Tech',
+		'OpenGL, OpenGL ES2, WebGL, WebXR, 360° Video, Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+	),
+	makeSkillLine('Software Development Platforms',
+		'Web, macOS, iOS (iPhone), tvOS (AppleTV), Meta Quest (VR Headset)'
+	),
+	makeSkillLine('Backend Systems',
+		'PHP, MySQL, WebRTC, PeerJS, Ant Media Server (Multi-Client Video Streaming), Colyseus (Multiplayer Framework), FeathersJS (Real-time Framework)'
+	),
+	makeSkillLine('Leadership',
+		'Team leadership, intern supervision, student mentorship'
+	),
+]));
 
 addHeader('EXPERIENCE');
 const boldSection = (text: string) => {
@@ -140,20 +168,21 @@ makeExperience(
 	'Liquid Cinema — November 2015 to Present',
 	[
 		link('https://liquidcinemavr.com'),
-		'Built the frontend web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
-		'Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions.',
-		'Responsible for client side Apple iOS and tvOS components of the Liquid Cinema platform.',
-		'Developed Virtual and Augmented Reality support for the web component of the Liquid Cinema platform using the WebXR standard.',
+		'Built the frontend web component of the Liquid Cinema platform, a browser-native, interactive cinematic 360° video WebGL player',
+		'Developed backend storage for user viewing directions and a frontend heat map-style visualization to represent view concentration',
+		'Responsible for client-side Apple iOS and tvOS components of the Liquid Cinema platform',
+		'Developed Virtual and Augmented Reality support using the WebXR standard for the web-based Liquid Cinema platform',
+		'FFmpeg video encoding and Vimeo video hosting integration',
 
 		'OMAF 360° VR Video Streaming',
 		[
-			'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform.',
+			'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform',
 			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
 		],
 
 		'"Magic of Flight" interactive VR educational experience, Lead WebXR Developer',
 		[
-			'Meta collaboration to create an interactive web experience for the Quest VR Headset.',
+			'Meta collaboration to create an interactive web experience for the Quest VR Headset',
 			'2021 WebXR Poly Awards winner:',
 			[
 				'Education Experience of the Year',
@@ -163,14 +192,14 @@ makeExperience(
 			link('https://liquidcinemavr.com/fly/'),
 		],
 
-		'Multi user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
+		'Multi-user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
 
 		'Senior Metaverse collaborative environment frontend Lead',
 		[
-			'Conestoga College Collaboration.',
-			'3D Avatar conferencing solution.',
-			'Virtual Reality multi-user live interactive environment.',
-			'Messaging and live video and screen-share streaming.',
+			'Conestoga College Collaboration',
+			'3D Avatar conferencing solution',
+			'Virtual Reality multi-user live interactive environment',
+			'Messaging and live video and screen-share streaming',
 		],
 	]
 );
@@ -178,18 +207,25 @@ makeExperience(
 	'The Lindsay Project: Lead Programmer and Software Designer',
 	'University of Calgary — 2009 to 2015',
 	[
-		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary.',
-		'I worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications.',
-		'Developed “Zygote 3D Anatomy Atlas & Dissection Lab.”',
+		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary',
+		'Worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications',
+		'Developed “Zygote 3D Anatomy Atlas & Dissection Lab”',
 		[
-			'iPhone application released commercially to the iTunes App Store.',
-			'Currently not available, but reference videos are available:',
-			link('https://www.youtube.com/@Zygote3D/videos'),
+			'Released as an iPhone and iPad app on the iTunes App Store',
+			'Now archived, references available:',
+			[
+				link('https://lindsayvirtualhuman.com/?p=273'),
+				link('https://www.youtube.com/watch?v=3MZps2_Z1zo'),
+				link('https://www.youtube.com/watch?v=38d7P3JB4SE'),
+				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0'),
+			],
 		],
-		'Developed "Atlas", a 3D Human anatomy education oriented web application.',
+		'Developed "Atlas", a 3D Human anatomy education oriented web application',
 		[
 			'CBC segment on The Lindsay Project, featuring the Atlas application:',
-			link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
+			[
+				link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
+			]
 		],
 	]
 );
@@ -197,21 +233,21 @@ makeExperience(
 	'Vaccine Design and Implementation Project',
 	'University of Calgary — 2008',
 	[
-		'Developed interactive realtime 3D OpenGL visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program at the University of Calgary.',
+		'Developed interactive real-time 3D OpenGL visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program',
 	]
 );
 makeExperience(
 	'Swarm Art Software Developer',
 	'University of Calgary — 2005 to 2007',
 	[
-		'Artistic based apps and tools that use agent based swarm systems to generate visuals and facilitate interactive displays.',
+		'Artistic based apps and tools that use agent based swarm systems to generate visuals and facilitate interactive displays',
 		'Featured in:',
 		[
-			'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007.',
-			'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science, 2006.',
+			'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007',
+			'Digital’06: “Bio/Med SciART” submission accepted for public display in the New York Hall of Science, 2006',
 			'Victoria Conference Center street front window interactive public display, Victoria BC, August to December 2006',
-			'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006.',
-			'Nickle Galleries Museum interactive display, Calgary AB, 2005.',
+			'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006',
+			'Nickle Galleries Museum interactive display, Calgary AB, 2005',
 		]
 	]
 );
@@ -231,10 +267,7 @@ const createPublication = (main: string, sub1a: string, subName: string, sub1b: 
 
 	subElement1.appendChild(document.createTextNode(sub1a));
 
-	const subElementName = document.createElement('span');
-	subElementName.className = 'bold';
-	subElementName.appendChild(document.createTextNode(subName));
-	subElement1.appendChild(subElementName);
+	subElement1.appendChild(makeBoldSegment(subName));
 
 	subElement1.appendChild(document.createTextNode(sub1b));
 
