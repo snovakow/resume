@@ -125,52 +125,58 @@ addParagraph('I have supervised interns and mentored summer students throughout 
 
 addHeader('EXPERIENCE');
 const boldSection = (text: string) => {
-	const bold = document.createElement('span');
+	const bold = document.createElement('div');
 	bold.className = 'header';
 	bold.appendChild(document.createTextNode(text));
 	return bold;
 }
-const makeExperience = (title: string, description: RecursiveArray<ListValue> | ListValue) => {
+const makeExperience = (title: string, subtitle: string, description: RecursiveArray<ListValue>) => {
 	content.appendChild(boldSection(title));
+	content.appendChild(document.createTextNode(subtitle));
 	content.appendChild(createListNode(description));
 }
-makeExperience('Senior Developer, Liquid Cinema — November 2015—Present', [
-	link('https://liquidcinemavr.com'),
-	'Built the frontend web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
-	'Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions.',
-	'Responsible for client side Apple iOS and tvOS components of the Liquid Cinema platform.',
-	'Developed Virtual and Augmented Reality support for the web component of the Liquid Cinema platform using the WebXR standard.',
-
-	'OMAF 360° VR Video Streaming',
+makeExperience(
+	'Senior Developer',
+	'Liquid Cinema — November 2015 to Present',
 	[
-		'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform.',
-		link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
-	],
+		link('https://liquidcinemavr.com'),
+		'Built the frontend web component of the Liquid Cinema platform, a browser native interactive cinematic 360° video based WebGL player.',
+		'Heat Maps, a backend storage of user viewing directions, and frontend heat map styled visualization to represent concentrations of user viewing directions.',
+		'Responsible for client side Apple iOS and tvOS components of the Liquid Cinema platform.',
+		'Developed Virtual and Augmented Reality support for the web component of the Liquid Cinema platform using the WebXR standard.',
 
-	'"Magic of Flight" interactive VR educational experience, Lead WebXR Developer',
-	[
-		'Meta collaboration to create an interactive web experience for the Quest VR Headset.',
-		'2021 WebXR Poly Awards winner:',
+		'OMAF 360° VR Video Streaming',
 		[
-			'Education Experience of the Year',
-			'Video Experience of the Year',
-			'Experience of the Year',
+			'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform.',
+			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
 		],
-		link('https://liquidcinemavr.com/fly/'),
-	],
 
-	'Multi user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
+		'"Magic of Flight" interactive VR educational experience, Lead WebXR Developer',
+		[
+			'Meta collaboration to create an interactive web experience for the Quest VR Headset.',
+			'2021 WebXR Poly Awards winner:',
+			[
+				'Education Experience of the Year',
+				'Video Experience of the Year',
+				'Experience of the Year',
+			],
+			link('https://liquidcinemavr.com/fly/'),
+		],
 
-	'Senior Metaverse collaborative environment frontend Lead',
-	[
-		'Conestoga College Collaboration.',
-		'3D Avatar conferencing solution.',
-		'Virtual Reality multi-user live interactive environment.',
-		'Messaging and live video and screen-share streaming.',
-	],
-]);
-makeExperience('University of Calgary; Calgary, AB — 2005—2015', [
-	'The Lindsay Project, Lead Programmer and Software Designer — 2009—2015',
+		'Multi user WebRTC live web video chat integration using PeerJS, using the Colyseus and Feathers backend systems',
+
+		'Senior Metaverse collaborative environment frontend Lead',
+		[
+			'Conestoga College Collaboration.',
+			'3D Avatar conferencing solution.',
+			'Virtual Reality multi-user live interactive environment.',
+			'Messaging and live video and screen-share streaming.',
+		],
+	]
+);
+makeExperience(
+	'The Lindsay Project: Lead Programmer and Software Designer',
+	'University of Calgary — 2009 to 2015',
 	[
 		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary.',
 		'I worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications.',
@@ -185,14 +191,18 @@ makeExperience('University of Calgary; Calgary, AB — 2005—2015', [
 			'CBC segment on The Lindsay Project, featuring the Atlas application:',
 			link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
 		],
-	],
-
-	'Vaccine Design and Implementation Project, University of Calgary; Calgary, AB — 2008',
+	]
+);
+makeExperience(
+	'Vaccine Design and Implementation Project',
+	'University of Calgary — 2008',
 	[
 		'Developed interactive realtime 3D OpenGL visualizations to represent the modelling part of a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program at the University of Calgary.',
-	],
-
-	'Swarm Art Software Developer, University of Calgary; Calgary, AB — 2005—2007',
+	]
+);
+makeExperience(
+	'Swarm Art Software Developer',
+	'University of Calgary — 2005 to 2007',
 	[
 		'Artistic based apps and tools that use agent based swarm systems to generate visuals and facilitate interactive displays.',
 		'Featured in:',
@@ -203,8 +213,8 @@ makeExperience('University of Calgary; Calgary, AB — 2005—2015', [
 			'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006.',
 			'Nickle Galleries Museum interactive display, Calgary AB, 2005.',
 		]
-	],
-]);
+	]
+);
 
 addHeader('EDUCATION');
 const education = addParagraph();
