@@ -137,14 +137,17 @@ addParagraph(`My diverse work spans 3D graphics, immersive VR/AR, video encoding
 
 addHeader('SKILLS');
 content.appendChild(createListNode([
-	makeSkillLine('3D Graphics & Immersive Tech',
-		'OpenGL, OpenGL ES2, WebGL, WebXR, 360° Video, Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+	makeSkillLine('Languages',
+		'JavaScript, TypeScript, C, Objective-C, Swift, PHP, SQL, GLSL'
 	),
-	makeSkillLine('Software Development Platforms',
+	makeSkillLine('3D Graphics & Immersive',
+		'OpenGL, OpenGL ES2, WebGL, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+	),
+	makeSkillLine('Platforms',
 		'Web, macOS, iOS (iPhone), tvOS (AppleTV), Meta Quest (VR Headset)'
 	),
 	makeSkillLine('Backend Systems',
-		'PHP, MySQL, WebRTC, PeerJS, Ant Media Server (Multi-Client Video Streaming), Colyseus (Multiplayer Framework), FeathersJS (Real-time Framework)'
+		'MySQL, WebRTC, PeerJS, Ant Media Server (Multi-Client Video Streaming), Colyseus (Multiplayer Framework), FeathersJS (Real-time Framework)'
 	),
 	makeSkillLine('Leadership',
 		'Team leadership, intern supervision, student mentorship'
