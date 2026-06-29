@@ -144,9 +144,9 @@ content.appendChild(createListNode([
 		'OpenGL, OpenGL ES2, WebGL, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
 	),
 	makeSkillLine('Platforms',
-		'Web, macOS, iOS (iPhone), tvOS (AppleTV), Meta Quest (VR Headset)'
+		'Web, macOS, iOS (iPhone), tvOS (Apple TV), Meta Quest (VR)'
 	),
-	makeSkillLine('Backend Systems',
+	makeSkillLine('Backend & Realtime',
 		'MySQL, WebRTC, PeerJS, Ant Media Server (Multi-Client Video Streaming), Colyseus (Multiplayer Framework), FeathersJS (Real-time Framework)'
 	),
 	makeSkillLine('Leadership',
