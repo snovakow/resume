@@ -1,16 +1,59 @@
+:root {
+	/* Keep screen and print margins visually aligned */
+	--page-margin-x: 20mm;
+	--page-margin-y: 14mm;
+}
+
 body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 300;
-	overflow-x: 'visible';
-	overflow-y: 'auto';
+	overflow-x: visible;
+	overflow-y: auto;
+	padding: var(--page-margin-y) var(--page-margin-x);
+	box-sizing: border-box;
+}
+
+/* This forces Chrome's Print Prompt to use these margins automatically */
+@page {
+	size: letter;
+	/* Sets the target paper size (e.g., A4, letter) */
+	margin: var(--page-margin-y) var(--page-margin-x);
+	/* Sets the printable margins for the PDF */
+}
+
+/* Essential reset to make sure content behaves predictably */
+html,
+body {
+	margin: 0;
+	width: 100%;
 }
 
 .page {
-	left: 96px;
-	right: 96px;
-	position: absolute;
-	top: 96px;
-	padding-bottom: 48px;
+	width: 100%;
+	position: relative;
+	/* top: 0px; */
+	/* padding-bottom: 48px; */
+}
+
+@media print {
+	body {
+		padding: 0;
+	}
+
+	.page {
+		width: 100%;
+	}
+
+	html.is-safari .page {
+		padding: var(--page-margin-y) var(--page-margin-x);
+		box-sizing: border-box;
+	}
+
+	html.is-safari .page::before {
+		content: '';
+		display: block;
+		height: var(--page-margin-y);
+	}
 }
 
 .top {
