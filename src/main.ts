@@ -230,6 +230,10 @@ makeExperience(
 				link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
 			]
 		],
+		'Developed "Presenter", a Mac application for creating 3D human anatomy slide presentations.',
+		[
+			link('https://lindsayvirtualhuman.com/?page_id=451'),
+		],
 	]
 );
 makeExperience(
