@@ -17,7 +17,7 @@ body {
 @page {
 	size: letter;
 	/* Sets the target paper size (e.g., A4, letter) */
-	margin: var(--page-margin-y) var(--page-margin-x);
+	margin: 14mm 20mm;
 	/* Sets the printable margins for the PDF */
 }
 
@@ -42,17 +42,6 @@ body {
 
 	.page {
 		width: 100%;
-	}
-
-	html.is-safari .page {
-		padding: var(--page-margin-y) var(--page-margin-x);
-		box-sizing: border-box;
-	}
-
-	html.is-safari .page::before {
-		content: '';
-		display: block;
-		height: var(--page-margin-y);
 	}
 }
 
