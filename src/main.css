@@ -89,7 +89,6 @@ body {
 	margin-bottom: 8px;
 	font-size: 1em;
 	font-weight: 600;
-	position: relative;
 }
 
 .subheader {
@@ -97,7 +96,6 @@ body {
 	margin-bottom: 8px;
 	font-size: 1em;
 	font-weight: 600;
-	position: relative;
 }
 
 .paragraph {
@@ -107,7 +105,6 @@ body {
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 500;
-	position: relative;
 }
 
 .bulletMain {
