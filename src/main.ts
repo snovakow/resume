@@ -144,7 +144,7 @@ content.appendChild(createListNode([
 		'OpenGL, OpenGL ES2, WebGL, Three.js, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
 	),
 	makeSkillLine('Frameworks',
-		'React, Three.js, Vite, Webpack'
+		'Three.js, React, Vite, Webpack'
 	),
 	makeSkillLine('Platforms',
 		'Web, macOS, iOS (iPhone), tvOS (Apple TV), Meta Quest (VR)'
