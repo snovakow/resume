@@ -141,7 +141,10 @@ content.appendChild(createListNode([
 		'JavaScript, TypeScript, C, Objective-C, Swift, PHP, SQL, GLSL'
 	),
 	makeSkillLine('3D Graphics & Immersive',
-		'OpenGL, OpenGL ES2, WebGL, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+		'OpenGL, OpenGL ES2, WebGL, Three.js, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+	),
+	makeSkillLine('Frameworks',
+		'React, Three.js, Vite, Webpack'
 	),
 	makeSkillLine('Platforms',
 		'Web, macOS, iOS (iPhone), tvOS (Apple TV), Meta Quest (VR)'
@@ -172,6 +175,7 @@ makeExperience(
 	[
 		link('https://liquidcinemavr.com'),
 		'Built the frontend web component of the Liquid Cinema platform, a browser-native, interactive cinematic 360° video WebGL player',
+		'Migrated the web player from a raw WebGL app built on an internal rendering library I developed to Three.js',
 		'Developed backend storage for user viewing directions and a frontend heat map-style visualization to represent view concentration',
 		'Developed client-side Apple iOS and tvOS components of the Liquid Cinema platform',
 		'Developed virtual and augmented reality support using the WebXR standard for the web-based Liquid Cinema platform',
