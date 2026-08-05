@@ -44,6 +44,10 @@ body {
 	.page {
 		width: 100%;
 	}
+
+	.pdf-link {
+		display: none;
+	}
 }
 
 .top {
@@ -124,11 +128,11 @@ body {
 	margin-bottom: 0;
 }
 
-.bulletMain > .bulletSub + .bulletSub {
+.bulletMain>.bulletSub+.bulletSub {
 	margin-top: var(--bullet-spacing);
 }
 
-.content > .bulletMain > .bulletSub:first-child {
+.content>.bulletMain>.bulletSub:first-child {
 	margin-top: var(--bullet-spacing);
 }
 

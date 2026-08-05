@@ -38,7 +38,7 @@ const link = (url: string, title?: string) => {
 	return a;
 }
 
-const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>) => {
+const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>, pdfHidden: HTMLAnchorElement) => {
 	for (const line of lines) {
 		contact.appendChild(document.createTextNode(line));
 		contact.appendChild(document.createElement('br'));
@@ -49,6 +49,11 @@ const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>) =>
 		else contact.appendChild(document.createTextNode(' | '));
 		contact.appendChild(link);
 	}
+	const node = document.createElement('span');
+	node.appendChild(document.createTextNode(' | '));
+	node.appendChild(pdfHidden);
+	node.classList.add('pdf-link');
+	contact.appendChild(node);
 }
 createContact([
 	"+1 (647) 465-3759",
@@ -57,8 +62,10 @@ createContact([
 ], [
 	link('https://github.com/snovakow', 'GitHub'),
 	link('https://snovakow.com', 'Website'),
-	link('https://www.linkedin.com/in/snovakow', 'LinkedIn'),
-]);
+	link('https://www.linkedin.com/in/snovakow', 'LinkedIn')
+],
+	link('/ScottNovakowski-Resume.pdf', 'PDF')
+);
 
 const content = document.createElement('div');
 content.className = 'content';
