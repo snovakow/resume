@@ -64,7 +64,7 @@ createContact([
 	link('https://snovakow.com', 'Website'),
 	link('https://www.linkedin.com/in/snovakow', 'LinkedIn')
 ],
-	link('/ScottNovakowski-Resume.pdf', 'PDF')
+	link('./ScottNovakowski-Resume.pdf', 'PDF')
 );
 
 const content = document.createElement('div');
