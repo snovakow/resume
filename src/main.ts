@@ -164,16 +164,30 @@ const boldSection = (text: string) => {
 	bold.appendChild(document.createTextNode(text));
 	return bold;
 }
-const makeExperience = (title: string, subtitle: string, description: RecursiveArray<ListValue>) => {
+const makeExperience = (title: string, subtitle: string | Node, description: RecursiveArray<ListValue>) => {
 	content.appendChild(boldSection(title));
-	content.appendChild(document.createTextNode(subtitle));
+	content.appendChild(typeof subtitle === 'string' ? document.createTextNode(subtitle) : subtitle);
 	content.appendChild(createListNode(description));
+}
+const embed = (...nodes: Array<string | Node>) => {
+	const fragment = document.createDocumentFragment();
+	for (const node of nodes) {
+		if (typeof node === 'string') fragment.appendChild(document.createTextNode(node));
+		else fragment.appendChild(node);
+	}
+	return fragment;
+}
+const embeddedLink = (start: string | null = null, title: string, end: string | null = null, url: string) => {
+	const embedded = [];
+	if (start) embedded.push(start);
+	embedded.push(link(url, title));
+	if (end) embedded.push(end);
+	return embed(...embedded);
 }
 makeExperience(
 	'Senior Developer',
-	'Liquid Cinema — November 2015 to Present',
+	embeddedLink(null, 'Liquid Cinema', ' — November 2015 to Present', 'https://liquidcinemavr.com'),
 	[
-		link('https://liquidcinemavr.com'),
 		'Built the frontend web component of the Liquid Cinema platform, a browser-native, interactive cinematic 360° video WebGL player',
 		'Migrated the web player from a raw WebGL app built on an internal rendering library I developed to Three.js',
 		'Developed backend storage for user viewing directions and a frontend heat map-style visualization to represent view concentration',
@@ -181,13 +195,19 @@ makeExperience(
 		'Developed virtual and augmented reality support using the WebXR standard for the web-based Liquid Cinema platform',
 		'FFmpeg video encoding and Vimeo video hosting integration',
 
-		'OMAF 360° VR Video Streaming',
-		[
-			'Fraunhofer HHI collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform',
-			link('https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'),
-		],
+		embeddedLink(
+			null,
+			'Fraunhofer HHI',
+			' collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform',
+			'https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'
+		),
 
-		'"Magic of Flight" interactive VR educational experience, Lead WebXR Developer',
+		embeddedLink(
+			null,
+			'"Magic of Flight"',
+			' interactive VR educational experience, Lead WebXR Developer',
+			'https://liquidcinemavr.com/fly/'
+		),
 		[
 			'Meta collaboration to create an interactive web experience for the Quest VR Headset',
 			'2021 WebXR Poly Awards winner:',
@@ -196,7 +216,6 @@ makeExperience(
 				'Video Experience of the Year',
 				'Experience of the Year',
 			],
-			link('https://liquidcinemavr.com/fly/'),
 		],
 
 		'Multi-user WebRTC live web video chat integration using PeerJS with Colyseus and Feathers backend systems',
@@ -216,28 +235,37 @@ makeExperience(
 	[
 		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary',
 		'Worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications',
-		'Developed "Zygote 3D Anatomy Atlas & Dissection Lab"',
+		embeddedLink(
+			'Developed ',
+			'"Zygote 3D Anatomy Atlas & Dissection Lab"',
+			', an iPhone and iPad app released on the App Store',
+			'https://lindsayvirtualhuman.com/?p=273'
+		),
 		[
-			'Released as an iPhone and iPad app on the iTunes App Store',
-			'Now archived, references available:',
-			[
-				link('https://lindsayvirtualhuman.com/?p=273'),
-				link('https://www.youtube.com/watch?v=3MZps2_Z1zo'),
-				link('https://www.youtube.com/watch?v=38d7P3JB4SE'),
-				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0'),
-			],
+			embed(
+				'Demo videos: ',
+				link('https://www.youtube.com/watch?v=3MZps2_Z1zo', '1'),
+				' · ',
+				link('https://www.youtube.com/watch?v=38d7P3JB4SE', '2'),
+				' · ',
+				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0', '3'),
+			),
 		],
 		'Developed "Atlas", a 3D human anatomy education-oriented web application',
 		[
-			'CBC segment on The Lindsay Project, featuring the Atlas application:',
-			[
-				link('https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316'),
-			]
+			embeddedLink(
+				null,
+				'CBC segment',
+				' on The Lindsay Project, featuring the Atlas application',
+				'https://www.cbc.ca/news/canada/calgary/new-medical-tool-honours-u-of-c-student-s-memory-1.1240316',
+			),
 		],
-		'Developed "Presenter", a Mac application for creating 3D human anatomy slide presentations.',
-		[
-			link('https://lindsayvirtualhuman.com/?page_id=451'),
-		],
+		embeddedLink(
+			'Developed ',
+			'"Presenter"',
+			', a Mac application for creating 3D human anatomy slide presentations',
+			'https://lindsayvirtualhuman.com/?page_id=451'
+		),
 	]
 );
 makeExperience(
