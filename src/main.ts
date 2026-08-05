@@ -244,11 +244,11 @@ makeExperience(
 		[
 			embed(
 				'Demo videos: ',
-				link('https://www.youtube.com/watch?v=3MZps2_Z1zo', '1'),
+				link('https://www.youtube.com/watch?v=3MZps2_Z1zo', 'Intro'),
 				' · ',
-				link('https://www.youtube.com/watch?v=38d7P3JB4SE', '2'),
+				link('https://www.youtube.com/watch?v=38d7P3JB4SE', 'Rendering'),
 				' · ',
-				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0', '3'),
+				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0', 'Slice Tool'),
 			),
 		],
 		'Developed "Atlas", a 3D human anatomy education-oriented web application',
