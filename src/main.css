@@ -110,11 +110,21 @@ body {
 .bulletMain {
 	font-size: 1em;
 	line-height: 1.5em;
-	padding-bottom: 8px;
+	margin: 4px 0 12px;
+	padding-left: 20px;
 }
 
 .bulletSub {
-	padding-bottom: 8px;
+	padding-bottom: 4px;
+}
+
+.bulletMain .bulletMain {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.bulletMain > .bulletSub:last-child {
+	padding-bottom: 0;
 }
 
 .publicationMain {
