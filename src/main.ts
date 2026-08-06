@@ -14,7 +14,7 @@ const titleArea = document.createElement('div');
 titleArea.className = 'titleArea';
 top.appendChild(titleArea);
 
-const title = document.createElement('div');
+const title = document.createElement('h1');
 title.className = 'title';
 titleArea.appendChild(title);
 const subtitle = document.createElement('div');
@@ -72,7 +72,7 @@ content.className = 'content';
 page.appendChild(content);
 
 const addHeader = (text: string) => {
-	const header = document.createElement('div');
+	const header = document.createElement('h2');
 	header.className = 'header';
 	header.appendChild(document.createTextNode(text));
 	content.appendChild(header);
@@ -166,7 +166,7 @@ content.appendChild(createListNode([
 
 addHeader('EXPERIENCE');
 const boldSection = (text: string) => {
-	const bold = document.createElement('div');
+	const bold = document.createElement('h3');
 	bold.className = 'header';
 	bold.appendChild(document.createTextNode(text));
 	return bold;
