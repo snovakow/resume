@@ -148,8 +148,8 @@ const makeSkillLine = (title: string, description: string) => {
 addHeader('SUMMARY');
 addParagraph(`Software engineer with two decades of shipping across the stack — real-time 3D, VR and AR,
 	native macOS, iOS, and tvOS apps, web frontends, multiplayer and streaming, video pipelines, and research software.
-	Lead the frontend of a browser-native platform for interactive multimedia and guided 3D experiences. Work built
-	on it has shipped for ARTE, ZDF, BBC, and AT&T; a Meta collaboration won three 2021 WebXR Poly Awards. Designed and built the 3D anatomy teaching tools for the University of Calgary’s Cumming
+	Lead the frontend of a browser-native platform for interactive multimedia and guided 3D experiences, used by
+	ARTE, ZDF, BBC, and AT&T to ship their own work; a Meta collaboration won three 2021 WebXR Poly Awards. Designed and built the 3D anatomy teaching tools for the University of Calgary’s Cumming
 	School of Medicine. Fluent across domains, languages, and platforms, and now working agent-first with AI coding
 	tools; drawn to work that blends technical complexity with creative potential.`);
 
@@ -207,9 +207,9 @@ makeExperience(
 	embeddedLink(null, 'Liquid Cinema', ' — 2015 to Present', 'https://liquidcinemavr.com'),
 	[
 		'A browser-native engine for interactive multimedia, combining real-time 3D, live video streaming, and multi-user sessions across flat screens and headsets',
-		'Shipped immersive experiences for public broadcasters ARTE, ZDF, and BBC, for The Wall Street Journal and Meta, and internal training content for AT&T',
+		'Shipped the frontend behind immersive productions for Meta and public broadcasters ARTE, ZDF, and BBC, and the internal training content AT&T authored on the platform',
 		'Developed the native iOS and tvOS clients, integrated FFmpeg encoding with Vimeo hosting, and ran video encoding for ARTE’s productions',
-		'Built audience analytics on a PHP and MySQL backend, recording where viewers looked and rendering it as a heat map of attention',
+		'Built audience analytics on a PHP and MySQL backend, shipped with the broadcaster productions, recording where viewers looked and rendering it as a heat map of attention',
 		'Mentored an intern, advised the other technical leads in their areas, and challenged platform design decisions with management',
 
 		'Wrote the internal WebGL rendering library behind the web player, later migrating it to Three.js; the player is now the platform’s single frontend across desktop, mobile, and headset',
