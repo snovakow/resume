@@ -149,8 +149,7 @@ addHeader('SUMMARY');
 addParagraph(`Software engineer with two decades of shipping across the stack — real-time 3D, VR and AR,
 	native macOS, iOS, and tvOS apps, web frontends, multiplayer and streaming, video pipelines, and research software.
 	Lead the frontend of a browser-native platform for interactive multimedia and guided 3D experiences. Work built
-	on it has shipped for ARTE, ZDF, BBC, The Wall Street Journal, AT&T, and Meta, and a Meta collaboration won three
-	2021 WebXR Poly Awards. Designed and built the 3D anatomy teaching tools for the University of Calgary’s Cumming
+	on it has shipped for ARTE, ZDF, BBC, and AT&T; a Meta collaboration won three 2021 WebXR Poly Awards. Designed and built the 3D anatomy teaching tools for the University of Calgary’s Cumming
 	School of Medicine. Fluent across domains, languages, and platforms, and now working agent-first with AI coding
 	tools; drawn to work that blends technical complexity with creative potential.`);
 
