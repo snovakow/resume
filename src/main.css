@@ -224,10 +224,10 @@ h1.title {
 		margin: 2pt 0 7pt;
 	}
 
-	/* No bullet, or parent bullet with its sublist, splits across a page break;
-	   the largest such block is well under a page, so the worst case is a small
-	   gap at a page bottom — conventional for print resumes */
-	li {
+	/* A single bullet never splits mid-sentence. A parent bullet carrying a
+	   sublist may break between its children: those blocks run to a third of a
+	   page, and moving one whole left a matching gap at the previous page foot */
+	li:not(:has(ul)) {
 		break-inside: avoid;
 		page-break-inside: avoid;
 	}
