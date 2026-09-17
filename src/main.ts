@@ -226,7 +226,6 @@ makeExperience(
 			),
 		],
 
-		'Ported the 70,000-line web player to TypeScript with AI coding agents, reviewing and refactoring every module to modern standards and switching agents per file where one fell short',
 
 		embeddedLink(
 			'Led WebXR development of ',
@@ -240,7 +239,7 @@ makeExperience(
 			'Sixteen episodes playable individually or as one continuous run, kept stable on Quest 2 by strict memory loading and unloading through a purpose-built episode transition sequence',
 		],
 
-		'Led the frontend that grew the platform into a collaborative metaverse, a shared immersive 3D environment, in a Conestoga College partnership from late 2022',
+		'Grew the platform into a collaborative metaverse, a shared immersive 3D environment, leading the frontend in a Conestoga College partnership from late 2022',
 		[
 			'Guided sessions in which one presenter drives every participant through an environment or presentation, controlling what the group sees',
 			'Live presence and shared session state on Colyseus, turning the single-viewer player into a shared space',
@@ -250,6 +249,8 @@ makeExperience(
 			'Comment threads pinned to objects and places in the scene, for feedback during a session or after it',
 			'A phone as the presentation remote after a QR scan, for slide-style navigation through a guided experience',
 		],
+
+		'Ported the 70,000-line web player to TypeScript with AI coding agents, reviewing and refactoring every module to modern standards and switching agents per file where one fell short',
 
 		'Currently building Blockly-based visual scripting for code-free interaction authoring, and next the frontend for AI-guided experiences that respond to a visitor’s questions, location, and actions',
 	]
@@ -335,7 +336,7 @@ makeExperience(
 	),
 	[
 		'Puzzle generator and strategy explorer that grades each puzzle by the techniques its solution requires, across fifteen strategies from naked singles to Swordfish and Jellyfish',
-		'Wrote the strategy-based solver behind it over many months, a problem in its own right: each technique has to be detected the way a person reasoning through the grid would find it',
+		'Wrote the strategy-based solver behind it over many months, detecting each technique the way a person reasoning through the grid would find it',
 	]
 );
 
@@ -372,9 +373,9 @@ addHeader('PUBLICATIONS');
 const publications = createListNode([
 	createPublication(
 		'LINDSAY Virtual Human: Multi-Scale, Agent-based, and Interactive',
-		'C. Jacob, S. von Mammen, T. Davison, et al. (including ',
+		'C. Jacob, S. von Mammen, T. Davison, … ',
 		'S. Novakowski',
-		').',
+		', … and B. Wright.',
 		'Advances in Intelligent Modelling and Simulation, Springer, 2012.',
 	),
 	createPublication(
