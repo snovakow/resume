@@ -38,7 +38,15 @@ const link = (url: string, title?: string) => {
 	return a;
 }
 
-const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>, pdfHidden: HTMLAnchorElement) => {
+const createContact = (printLines: Array<string>, lines: Array<string>, links: Array<HTMLAnchorElement>, pdfHidden: HTMLAnchorElement) => {
+	// Kept out of the live page so scrapers don't harvest it; still printed into the PDF
+	for (const line of printLines) {
+		const node = document.createElement('span');
+		node.appendChild(document.createTextNode(line));
+		node.appendChild(document.createElement('br'));
+		node.classList.add('print-only');
+		contact.appendChild(node);
+	}
 	for (const line of lines) {
 		contact.appendChild(document.createTextNode(line));
 		contact.appendChild(document.createElement('br'));
@@ -57,6 +65,7 @@ const createContact = (lines: Array<string>, links: Array<HTMLAnchorElement>, pd
 }
 createContact([
 	"+1 (647) 465-3759",
+], [
 	"snovakow@gmail.com",
 	"Toronto, ON, Canada",
 ], [
@@ -137,30 +146,33 @@ const makeSkillLine = (title: string, description: string) => {
 }
 
 addHeader('SUMMARY');
-addParagraph(`My diverse work spans 3D graphics, immersive VR/AR, video encoding, real-time multiplayer, 
-	and mobile applications.  I’m driven by genuine curiosity and a desire to delve deeply into problems, 
-	which makes me particularly drawn to projects that blend technical complexity with creative potential. 
-	I thrive when my work has a meaningful impact.`);
+addParagraph(`Software engineer with two decades of shipping across the stack — real-time 3D, VR and AR,
+	native macOS, iOS, and tvOS apps, web frontends, multiplayer and streaming, video pipelines, and research software.
+	Lead the frontend of a browser-native platform for interactive multimedia and guided 3D experiences. Work built
+	on it has shipped for ARTE, ZDF, BBC, The Wall Street Journal, AT&T, and Meta, and a Meta collaboration won three
+	2021 WebXR Poly Awards. Designed and built the 3D anatomy teaching tools for the University of Calgary’s Cumming
+	School of Medicine. Fluent across domains, languages, and platforms, and now working agent-first with AI coding
+	tools; drawn to work that blends technical complexity with creative potential.`);
 
 addHeader('SKILLS');
 content.appendChild(createListNode([
 	makeSkillLine('Languages',
-		'JavaScript, TypeScript, HTML, CSS, C, Objective-C, Swift, PHP, SQL, GLSL'
+		'JavaScript, TypeScript, HTML, CSS, C, Objective-C, Swift, PHP, SQL (MySQL), GLSL'
 	),
-	makeSkillLine('3D Graphics & Immersive',
-		'OpenGL, OpenGL ES2, WebGL, Three.js, WebXR, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
+	makeSkillLine('3D Graphics & Immersive Media',
+		'OpenGL, OpenGL ES2, WebGL, Three.js, WebXR, Gaussian Splatting, 360° and Stereoscopic Video, Virtual Reality (VR), Augmented Reality (AR)'
 	),
-	makeSkillLine('Frameworks',
-		'React, Vite, Webpack'
+	makeSkillLine('Frameworks & Tooling',
+		'React, Vite, Webpack, Node.js and npm build systems, WebRTC, FFmpeg'
 	),
 	makeSkillLine('Platforms',
 		'Web, macOS, iOS (iPhone), tvOS (Apple TV), Meta Quest (VR)'
 	),
-	makeSkillLine('Backend & Realtime',
-		'MySQL, WebRTC, PeerJS, Ant Media Server (Multi-Client Video Streaming), Colyseus (Multiplayer Framework), FeathersJS (Real-time Framework)'
+	makeSkillLine('AI-Assisted Development',
+		'Claude Code, GitHub Copilot, agent-directed planning and implementation in an established codebase'
 	),
 	makeSkillLine('Leadership',
-		'Team leadership, intern supervision, student mentorship'
+		'Senior and lead engineer roles, cross-team technical guidance, intern and student mentorship'
 	),
 ]));
 
@@ -192,60 +204,67 @@ const embeddedLink = (start: string | null = null, title: string, end: string | 
 	return embed(...embedded);
 }
 makeExperience(
-	'Senior Developer',
-	embeddedLink(null, 'Liquid Cinema', ' — November 2015 to Present', 'https://liquidcinemavr.com'),
+	'Senior Developer, Frontend Lead',
+	embeddedLink(null, 'Liquid Cinema', ' — 2015 to Present', 'https://liquidcinemavr.com'),
 	[
-		'Built the frontend web component of the Liquid Cinema platform, a browser-native, interactive cinematic 360° video WebGL player',
-		'Migrated the web player from a raw WebGL app built on an internal rendering library I developed to Three.js',
-		'Developed backend storage for user viewing directions and a frontend heat map-style visualization to represent view concentration',
-		'Developed client-side Apple iOS and tvOS components of the Liquid Cinema platform',
-		'Developed virtual and augmented reality support using the WebXR standard for the web-based Liquid Cinema platform',
-		'FFmpeg video encoding and Vimeo video hosting integration',
+		'A browser-native engine for interactive multimedia, combining real-time 3D, live video streaming, and multi-user sessions across flat screens and headsets',
+		'Shipped immersive experiences for public broadcasters ARTE, ZDF, and BBC, for The Wall Street Journal and Meta, and internal training content for AT&T',
+		'Developed the native iOS and tvOS clients, integrated FFmpeg encoding with Vimeo hosting, and ran video encoding for ARTE’s productions',
+		'Built audience analytics on a PHP and MySQL backend, recording where viewers looked and rendering it as a heat map of attention',
+		'Mentored an intern, advised the other technical leads in their areas, and challenged platform design decisions with management',
+
+		'Wrote the internal WebGL rendering library behind the web player, later migrating it to Three.js; the player is now the platform’s single frontend across desktop, mobile, and headset',
+		[
+			'Real-time 3D scenes composited with interactive cinematic 360° and stereoscopic video',
+			'Virtual and augmented reality support built on the WebXR standard',
+			'Gaussian splatting for photoreal captured scenes and objects, rendered live in the browser',
+			embeddedLink(
+				null,
+				'Fraunhofer HHI',
+				' collaboration to integrate OMAF 360° VR video streaming into the web platform',
+				'https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'
+			),
+		],
+
+		'Ported the 70,000-line web player to TypeScript with AI coding agents, reviewing and refactoring every module to modern standards and switching agents per file where one fell short',
 
 		embeddedLink(
-			null,
-			'Fraunhofer HHI',
-			' collaboration to integrate OMAF 360° VR video streaming into the Liquid Cinema web platform',
-			'https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/mpeg-omaf.html'
-		),
-
-		embeddedLink(
-			null,
-			'"Magic of Flight"',
-			' interactive VR educational experience, Lead WebXR Developer',
+			'Led WebXR development of ',
+			'“Magic of Flight”',
+			', an interactive educational experience built with Meta for the Quest headset',
 			'https://liquidcinemavr.com/fly/'
 		),
 		[
-			'Meta collaboration to create an interactive web experience for the Quest VR Headset',
-			'2021 WebXR Poly Awards winner:',
-			[
-				'Education Experience of the Year',
-				'Video Experience of the Year',
-				'Experience of the Year',
-			],
+			'Won three 2021 WebXR Poly Awards: Experience of the Year, Education Experience of the Year, and Video Experience of the Year',
+			'Featured on the Meta Quest browser’s splash page and sustained around 1,000 visits a day',
+			'Sixteen episodes playable individually or as one continuous run, kept stable on Quest 2 by strict memory loading and unloading through a purpose-built episode transition sequence',
 		],
 
-		'Multi-user WebRTC live web video chat integration using PeerJS with Colyseus and Feathers backend systems',
-
-		'Senior frontend lead for a collaborative metaverse environment',
+		'Led the frontend that grew the platform into a collaborative metaverse, a shared immersive 3D environment, in a Conestoga College partnership from late 2022',
 		[
-			'Conestoga College collaboration',
-			'3D avatar conferencing solution',
-			'Virtual reality multi-user live interactive environment',
-			'Messaging and live video and screen-share streaming',
+			'Guided sessions in which one presenter drives every participant through an environment or presentation, controlling what the group sees',
+			'Live presence and shared session state on Colyseus, turning the single-viewer player into a shared space',
+			'“Vavatars” — video-avatars streaming each participant’s live camera onto their 3D avatar for conferencing in virtual reality',
+			'Live video chat, messaging, screen sharing, and 3D line drawing to mark up the scene as the group talks',
+			'Video distribution moved from peer-to-peer WebRTC over PeerJS to Ant Media Server, targeted at and tested with sessions of 20 concurrent participants',
+			'Comment threads pinned to objects and places in the scene, for feedback during a session or after it',
+			'A phone as the presentation remote after a QR scan, for slide-style navigation through a guided experience',
 		],
+
+		'Currently building Blockly-based visual scripting for code-free interaction authoring, and next the frontend for AI-guided experiences that respond to a visitor’s questions, location, and actions',
 	]
 );
 makeExperience(
 	'The Lindsay Project: Lead Programmer and Software Designer',
 	'University of Calgary — 2009 to 2015',
 	[
-		'Funded by the department of Undergraduate Medical Education in the Cumming School of Medicine at the University of Calgary',
-		'Worked with Zygote 3D human anatomy models, originally used in Google Body, now Zygote Body, as part of a full stack pipeline for multiple applications',
+		'Designed and built the 3D human anatomy teaching tools for the Cumming School of Medicine, funded by the Department of Undergraduate Medical Education',
+		'Built a full-stack pipeline (PHP, MySQL) around Zygote 3D human anatomy models, originally used in Google Body (now Zygote Body), powering multiple applications',
+		'Mentored summer students on the project team',
 		embeddedLink(
 			'Developed ',
-			'"Zygote 3D Anatomy Atlas & Dissection Lab"',
-			', an iPhone and iPad app released on the App Store',
+			'“Zygote 3D Anatomy Atlas & Dissection Lab”',
+			', an iPhone and iPad app that averaged around 2,000 downloads a year on the App Store',
 			'https://lindsayvirtualhuman.com/?p=273'
 		),
 		[
@@ -258,7 +277,7 @@ makeExperience(
 				link('https://www.youtube.com/watch?v=M0xubQ0_5Q0', 'Slice Tool'),
 			),
 		],
-		'Developed "Atlas", a 3D human anatomy education-oriented web application',
+		'Created “Atlas”, a 3D human anatomy web application provided to the school’s medical students',
 		[
 			embeddedLink(
 				null,
@@ -268,9 +287,9 @@ makeExperience(
 			),
 		],
 		embeddedLink(
-			'Developed ',
-			'"Presenter"',
-			', a Mac application for creating 3D human anatomy slide presentations',
+			'Wrote ',
+			'“Presenter”',
+			', a Mac application for 3D anatomy slide presentations, adopted by a professor for a semester of teaching',
 			'https://lindsayvirtualhuman.com/?page_id=451'
 		),
 	]
@@ -279,22 +298,44 @@ makeExperience(
 	'Vaccine Design and Implementation Project',
 	'University of Calgary — 2008',
 	[
-		'Developed interactive real-time 3D OpenGL visualizations for a vaccine design project funded through the AHFMR Interdisciplinary Team in Vaccine Design and Implementation program',
+		'Built interactive 3D OpenGL visualizations for an AHFMR-funded vaccine design study',
 	]
 );
 makeExperience(
 	'Swarm Art Software Developer',
 	'University of Calgary — 2005 to 2007',
 	[
-		'Built agent-based swarm systems to generate visuals and facilitate interactive art displays',
-		'Featured in:',
-		[
-			'Images published in the Leonardo Journal, Volume 40, issue 3, by MIT Press, 2007',
-			'Digital\'06: "Bio/Med SciART" submission accepted for public display in the New York Hall of Science, 2006',
-			'Victoria Conference Center street front window interactive public display, Victoria BC, August to December 2006',
-			'Discovery Channel "A Daily Planet" segment on swarm intelligence, featuring the Swarm Art system, aired on October 23, 2006',
-			'Nickle Galleries Museum interactive display, Calgary AB, 2005',
-		]
+		'Developed agent-based swarm systems that generated visuals for interactive art installations',
+		'Featured in the Leonardo Journal (MIT Press, 2007), the New York Hall of Science (Digital’06 “Bio/Med SciART”, 2006), a Discovery Channel “Daily Planet” segment on swarm intelligence (2006), and interactive public displays at the Victoria Conference Centre (Victoria, BC, 2006) and the Nickle Arts Museum (Calgary, 2005)',
+	]
+);
+
+addHeader('PROJECTS');
+makeExperience(
+	'Tims Hockey Challenge Helper',
+	embed(
+		'Personal project — 2026 · ',
+		link('https://snovakow.com/timspicks/', 'App'),
+		' · ',
+		link('https://github.com/snovakow/timspicks', 'Source'),
+	),
+	[
+		'Web app that ranks NHL goal-scorer picks for the Tim Hortons Hockey Challenge from sportsbook implied probabilities',
+		'Built in React over several months as a deliberate way to learn the framework, developed agent-first with GitHub Copilot',
+		'Picks made with the app ranked in the top 0.38% of roughly 600,000 players in Challenge 6 of the 2025–26 season, and the top 1.33% in the playoffs',
+	]
+);
+makeExperience(
+	'Sudoku',
+	embed(
+		'Personal project — 2025 · ',
+		link('https://snovakow.com/sudoku', 'App'),
+		' · ',
+		link('https://github.com/snovakow/sudoku', 'Source'),
+	),
+	[
+		'Puzzle generator and strategy explorer that grades each puzzle by the techniques its solution requires, across fifteen strategies from naked singles to Swordfish and Jellyfish',
+		'Wrote the strategy-based solver behind it over many months, a problem in its own right: each technique has to be detected the way a person reasoning through the grid would find it',
 	]
 );
 
@@ -331,25 +372,25 @@ addHeader('PUBLICATIONS');
 const publications = createListNode([
 	createPublication(
 		'LINDSAY Virtual Human: Multi-Scale, Agent-based, and Interactive',
-		'C. Jacob, S. von Mammen, T. Davison, A. Sarraf-Shirazi, V. Sarpe, A. Esmaeili, D. Phillips, I. Yazdanbod, ',
+		'C. Jacob, S. von Mammen, T. Davison, et al. (including ',
 		'S. Novakowski',
-		', S. Steil, C. Gingras, H. Jamniczky, B. Hallgrimsson, and B. Wright.',
-		'Advances in Intelligent Modelling and Simulation, Studies in Computational Intelligence Volume 422, pp 327-349; Springer-Verlag Berlin Heidelberg, 2012',
+		').',
+		'Advances in Intelligent Modelling and Simulation, Springer, 2012.',
 	),
 	createPublication(
 		'Evolutionary Swarm Design: How Can Swarm-based Systems Help to Generate and Evaluate Designs?',
 		'Sebastian von Mammen, ', 'Scott Novakowski', ', Gerald Hushlak, and Christian Jacob.',
-		'Design Principles and Practices: An International Journal, Volume 3, Issue 3, pp. 371-386, 2009.',
+		'Design Principles and Practices: An International Journal, 2009.',
 	),
 	createPublication(
 		'Evolutionary design of dynamic SwarmScapes',
 		'Namrata Khemka, ', 'Scott Novakowski', ', Gerald Hushlak, and Christian Jacob.',
-		'Genetic and Evolutionary Computation Conference, GECCO 2008, Proceedings, Atlanta, GA, USA, July 12-16, 2008.',
+		'GECCO 2008 Proceedings, Atlanta, GA, 2008.',
 	),
 	createPublication(
 		'Motion swarms: video interaction for art in complex environments',
 		'Quoc Nguyen, ', 'Scott Novakowski', ', Jeffrey E. Boyd, Christian Jacob, and Gerald Hushlak.',
-		'Proceedings of the 14th annual ACM international conference on Multimedia, Santa Barbara, CA, USA, October 23-27, 2006.',
+		'ACM International Conference on Multimedia, Santa Barbara, CA, 2006.',
 	),
 ]);
 content.appendChild(publications);
