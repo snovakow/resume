@@ -230,7 +230,7 @@ makeExperience(
 			'Led WebXR development of ',
 			'“Magic of Flight”',
 			', an interactive educational experience built with Meta for the Quest headset',
-			'https://liquidcinemavr.com/fly/'
+			'https://fly.fan/'
 		),
 		[
 			'Won three 2021 WebXR Poly Awards: Experience of the Year, Education Experience of the Year, and Video Experience of the Year',
